@@ -6,7 +6,7 @@
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    background-image: url(/public/images/orman.png);
+    background-image: url(/images/orman.png);
     background-size: cover;
     
 }

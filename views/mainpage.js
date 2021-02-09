@@ -2,7 +2,7 @@ window.onload = function () {
   var div = document.getElementById("textsliderjss");
   var slideImage = document.getElementById("slide-image");
   var h1 = document.getElementById("tet");
-  var images = ["/public/images/etkinlik.png", "/public/images/main.jfif"];
+  var images = ["/images/etkinlik.png", "/images/main.jfif"];
   var text = [
     "Senin Dünyan Senin Kuralların",
     "Oyunun Kurallarını Sen Belirle",

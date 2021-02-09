@@ -106,6 +106,14 @@ router.get("/privacypolicy", (req, res) => {
     ownerr: req.session.ownerUser,
   });
 });
+router.get("/events", (req, res) => {
+  res.render("events", {
+    email: req.session.emailAddress,
+    loginn: req.session.loggedinUser,
+    adminn: req.session.adminUser,
+    ownerr: req.session.ownerUser,
+  });
+});
 
 
 

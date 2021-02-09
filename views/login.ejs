@@ -4,8 +4,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/public/css/signin.css">
-    <link rel="stylesheet" href="/public/css/style.css">
+    <link rel="stylesheet" href="/css/signin.css">
+    <link rel="stylesheet" href="/css/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css">
     <title>Website</title>
 </head>
@@ -16,23 +16,23 @@
         <div class="header container">
             <div class="navbar">
                 <div class="logo">
-                    <a href="/"><img src="/public/images/logo.png" class="logoimg" /></a>
+                    <a href="/"><img src="/images/logo.png" class="logoimg" /></a>
                 </div>
                 <div class="navlist">
                     <div class="hb">
                         <div class="bar"></div>
                     </div>
                     <ul>
-                        <li><a href="/wievs/index.html">Anasayfa</a></li>
+                        <li><a href="/">Anasayfa</a></li>
                         <li><a href="/events">Etkinlikler</a></li>
-                        <li><a href="">Hakkımızda</a></li>
+                        <li><a href="/aboutus">Hakkımızda</a></li>
                         <li><a href="">Yönetim Ekibi</a></li>
                         <li><a href="">Çalışma Ekibi</a></li>
                         <li class="entrance">
-                            <a href="/wievs/signin.html">Giriş Yap</a>
+                            <a href="/login">Giriş Yap</a>
                         </li>
                         <li class="entrance">
-                            <a href="">Üye Ol</a>
+                            <a href="/register">Üye Ol</a>
                         </li>
                     </ul>
                 </div>
@@ -42,7 +42,7 @@
     <!-- *Navbar End -->
     <!-- Mid Part-->
     <section id="mid-part">
-        <form action="" method="">
+        <form action="/auth/login" method="POST">
     <div class="login-box">
         <h1>Giriş Yap</h1>
         <div class="textbox">
@@ -53,9 +53,9 @@
             <i class="fas fa-unlock-alt"></i>
             <input type="password" placeholder="Şifreniz" name="" value="">
         </div>
-            <input class="btn" type="button" name="" value="Giriş">
+            <input class="btn" type="submit" name="" value="Giriş">
             <div class="reg-for">
-                <a href="/wievs/index.html" style="color: white;">Şifremi Unuttum</a>
+                <a href="/forgetPassword" style="color: white;">Şifremi Unuttum</a>
             </div>
             <div class="reg-for">
                 <p> Hala hesabınız yok mu <a href="" style="color: white;"> Kayıt ol?</a></p>
@@ -72,7 +72,7 @@
                     <div class="log">
                         <a href="/">
                             <h1 style="color: white; font-size: 3rem">
-                                <img src="/public/images/logo.png" style="width: 5rem; border-radius: 50%" />
+                                <img src="/images/logo.png" style="width: 5rem; border-radius: 50%" />
                             </h1>
                         </a>
                         <p>
@@ -101,7 +101,7 @@
                         <h2>Kurumsal</h2>
                         <ul class="box">
                             <li><a href="/aboutus">Hakkımızda</a></li>
-                            <li><a href="/wievs/contactus.html">İletişim</a></li>
+                            <li><a href="/contactus">İletişim</a></li>
                         </ul>
                     </li>
                 </ul>
@@ -112,6 +112,6 @@
         </div>
     </section>
     <!-- *Footer End -->
-    <script src="/wievs/hb.js"></script>
+    <script src="/views/hb.js"></script>
 </body>
 </html>

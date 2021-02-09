@@ -2,17 +2,16 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="/public/css/style.css" />
-    <link rel="stylesheet" href="/public/css/events2.css" />
+    <link rel="stylesheet" href="/css/contactus.css" />
+    <link rel="stylesheet" href="/css/style.css" />
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css"
     />
-    <title>Anasayfa</title>
-    <script src="/wievs/mainpage.js"></script>
+    <title>Website</title>
   </head>
+
   <body>
     <!-- *Navbar -->
     <section id="header">
@@ -28,11 +27,16 @@
               <div class="bar"></div>
             </div>
             <ul>
-              <li><a href="/">Anasayfa</a></li>
+              <li><a href="/wievs/index.html">Anasayfa</a></li>
               <li><a href="/events">Etkinlikler</a></li>
-              <li><a href="">Hakkımızda</a></li>
+              <li><a href="/wievs/aboutus.html">Hakkımızda</a></li>
+              <li><a href="/">Yönetim Ekibi</a></li>
+              <li><a href="/">Çalışma Ekibi</a></li>
               <li class="entrance">
-                <a href="">Giriş Yap</a>
+                <a href="/wievs/signin.html">Giriş Yap</a>
+              </li>
+              <li class="entrance">
+                <a href="">Üye Ol</a>
               </li>
             </ul>
           </div>
@@ -40,26 +44,68 @@
       </div>
     </section>
     <!-- *Navbar End -->
-    <section id="middle">
-        <div class="page">
-          <div class="main">
-            <div class="a2">
-                <div class="a3-photo">
-                    <img src="/public/images/neon-background--wallpaper.jpg">
-                </div>
-                <div class="a3-title">
-                    <h1>BAŞLIK</h1>
-                </div>
-                <div class="a3-text">
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus doloribus maxime temporibus soluta eum, alias in numquam assumenda impedit molestiae quidem dolore sapiente quas est aperiam pariatur ex amet. Cumque.</p>
-
-                </div>
+    <!-- MidPage Section -->
+    <section id="contact">
+      <div class="content">
+        <h2>Bize ilet</h2>
+        <p>
+          Görüş ve önerileriniz bizim için değerlidir.Aşağıdaki formdan bize
+          ulaşabilirsiniz
+        </p>
+      </div>
+      <div class="container2">
+        <div class="contactInfo">
+          <div class="boxc">
+            <div class="text">
+              <h3 style="text-align: center">Adres</h3>
+              <p style="text-align: center; margin-bottom: 2rem">
+                Meşrutiyet, Işık Ünv., 34980 Şile/İstanbul
+              </p>
+              <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3003.424683855983!2d29.561808515665582!3d41.16890351747333!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x409e32a67119d599%3A0xf4e228611d2df2f0!2zRk1WIEnFn8SxayDDnG5pdmVyc2l0ZXNp!5e0!3m2!1str!2str!4v1612870748823!5m2!1str!2str"
+                width="600"
+                height="450"
+                frameborder="0"
+                style="border: 0"
+                allowfullscreen=""
+                aria-hidden="false"
+                tabindex="0"
+              ></iframe>
+              <h3 style="text-align: center; margin-top: 2rem">Email</h3>
+              <p style="text-align: center">snoll@gmail.com</p>
             </div>
           </div>
         </div>
-      </section>
+        <div class="contactForm">
+          <form class="form-part" action="/auth/contactus" method="POST">
+            <h2>Mesaj Gönder</h2>
+            <div class="inputBox">
+              <input type="text" name="nameS" required="required" />
+              <span>Ad-Soyad</span>
+            </div>
+            <div class="inputBox">
+              <input type="text" name="contactmail" required="required" />
+              <span>Email</span>
+            </div>
+            <div class="inputBox">
+              <textarea name="message" required="required"></textarea>
+              <span>Mesajını Yaz</span>
+            </div>
+            <div class="inputBox">
+              <input
+                class="button"
+                type="submit"
+                name=""
+                value="Mesaj Gönder"
+              />
+            </div>
+          </form>
+        </div>
+      </div>
+    </section>
+    <!-- End MidPage Section -->
     <!-- *Footer -->
-    <section id="footer">
+    <section id="footer" style="margin-top: 0px">
       <div class="footer">
         <div class="fo">
           <div class="footerleft">
@@ -107,8 +153,7 @@
               <h2>Kurumsal</h2>
               <ul class="box">
                 <li><a href="/aboutus">Hakkımızda</a></li>
-                <li><a href="/aboutus">İletişim</a></li>
-                <li><a href="/contactus">Yönetim Ekibi</a></li>
+                <li><a href="/wievs/contactus.html">İletişim</a></li>
               </ul>
             </li>
           </ul>

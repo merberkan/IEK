@@ -1,0 +1,27 @@
+.a2{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    justify-items: center;
+    align-content: center;
+    margin-top: 7rem;
+}
+
+.a3-photo img{
+    width: 90rem;
+    height: 70rem;
+    object-fit: contain;
+    display: block;
+}
+
+.a3-title{
+    font-size: 2rem;
+    margin-bottom: 2rem;
+    font-family: sans-serif;
+}
+
+.a3-text{
+    font-size: 2rem;
+    font-family: sans-serif;
+}

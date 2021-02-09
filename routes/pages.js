@@ -65,6 +65,28 @@ router.get("/Useragreement", (req, res) => {
   });
 });
 
+router.get("/UserPanel", (req, res) => {
+    db.query("SELECT * FROM iek.Users", async (err, result) => {
+      const Users = [];
+      if (result.length > 0) {
+        for (var i = 0; i < result.length; i++) {
+          var a = {
+            role: result[i].role,
+            email: result[i].email,
+            id: result[i].id,
+          };
+          Users.push(a);
+        }
+      }
+      res.render("UserPanel", {
+        Users,
+        email: req.session.emailAddress,
+        loginn: req.session.loggedinUser,
+        adminn: req.session.adminUser,
+        ownerr: req.session.ownerUser,
+      });
+    });
+});
 
 
 router.get("/aboutus", (req, res) => {
@@ -163,6 +185,57 @@ router.get("/registerSuccess", (req, res) => {
     lastname: req.session.lname,
   });
 });
+router.get("/sendProveMail/:email", (req, res) => {
+  const path = req.params.email;
+  const encryptedemail = cryptr.encrypt(path);
+        var transporter = nodemailer.createTransport({
+          service: "gmail",
+          auth: {
+            user: "snolldestek@gmail.com",
+            pass: "snoll123",
+          },
+          tls: {
+            rejectUnauthorized: false,
+          },
+        });
+
+        var mailOptions = {
+          from: "snolldestek@gmail.com",
+          to: path,
+          subject: "Tebrikler",
+          text:
+            "Destek ekibimiz tarafından üyeliğiniz kabul edilmiştir bu bağlantıya tıklayarak üyeliğinizi aktifleştirebilirsiniz http://localhost:3000/activateUser/" +
+            encryptedemail +
+            "  İşletme ve Ekonomi kulübü ailesine hoşgeldiniz.",
+        };
+
+        transporter.sendMail(mailOptions, function (error, info) {
+          if (error) {
+            console.log(error);
+          } else {
+            console.log("Email sent: " + info.response);
+          }
+        });
+        res.redirect("/sendSuccess");
+});
+router.get("/activateUser/:mail", async (req, res) => {
+  const path = req.params.mail;
+  const decryptedEmail = cryptr.decrypt(path);
+    db.query(
+      "UPDATE users SET isVerified= true where email = ? ",
+      [ decryptedEmail],
+      (error, result) => {
+        if (error) {
+          console.log(error);
+        } else {
+          res.render("activeSuccess", {
+            loginn: req.session.loggedinUser,
+          });
+        }
+      }
+    );
+  
+});
 router.get("/contactusSuccess", (req, res) => {
   res.render("contactusSuccess", {
     loginn: req.session.loggedinUser,
@@ -177,6 +250,13 @@ router.get("/notFound", (req, res) => {
     loginn: req.session.loggedinUser,
   });
 });
+router.get("/sendSuccess", (req, res) => {
+  res.render("sendSuccess", {
+    email: req.session.emailAddress,
+    loginn: req.session.loggedinUser,
+  });
+});
+
 
 
 

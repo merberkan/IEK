@@ -42,12 +42,13 @@ db.connect((error) => {
         console.log("MYSQL Connected...")
     }
 })
+app.use('/auth' ,require('./routes/auth'));
 app.use('/', require('./routes/pages'));
-app.use((req,res) => {
-    if(req.statusCode == null || req.statusCode == 404){
-        res.redirect('/notFound');
-    }
-});
+// app.use((req,res) => {
+//     if(req.statusCode == null || req.statusCode == 404){
+//         res.redirect('/notFound');
+//     }
+// });
 
 
 app.listen(3000, () => {

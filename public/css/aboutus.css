@@ -1,0 +1,168 @@
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;700&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Merriweather&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Slab&display=swap');
+#Aboutus {
+    background-color: rgb(255, 255, 255);
+    min-height: 80vh;
+    width: 100%;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+    margin-top: 5%;
+   
+  }
+  .container-aboutus {
+    width: 77%;
+    display: flex;
+    line-height: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    flex-direction: column;
+  }
+  .toppart{
+    display: flex;
+    flex-direction: row;
+  }
+  .leftpart {
+    width: 60%;
+    float: left;
+    padding-right: 50px;
+  }
+  .content {
+    text-align: justify;
+  }
+  .imagepart {
+    margin-top: 5rem;
+    width: 34%;
+    float: right;
+    
+  }
+  .imagepart img {
+    max-width: 100%;
+
+  }
+   h2 {
+    font-size: 30px;
+    font-weight: 800;
+    font-family: 'Merriweather', serif;
+  }
+  .content .title h3 {
+    font-size: 15px;
+    padding-top: 15px;
+    
+  }
+  .content p {
+    font-size: 16px;
+    padding-top: 15px;
+    font-family: 'Roboto Slab', serif;
+  }
+  .socialmedia{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+    margin-top: 20px;
+}
+  
+  .content .socialmedia {
+    padding-top: 40px;
+    display: flex;
+    justify-content: center;
+  }
+.socialitem-mid a{
+    text-shadow: 0px 7px 8px rgba(0, 0, 0, 0.5);
+    transition:  all ease-in-out 130ms;
+}
+
+.socialitem-mid a:hover{
+    margin-top: -8px;
+    text-shadow: 0px 12px 12px rgba(0, 0, 0, 0.3);
+}    
+
+.socialitem-mid a{
+    display: flex;
+    flex: 0.14;
+    max-width: 0.5rem;
+    justify-content: center;
+    text-decoration: none;
+}
+.bottom{
+  margin-top: 5rem;
+}
+.bottom ul{
+  margin-top: 15px;
+}
+.bottom ul li{
+  font-size: 16px;
+  line-height: 30px;
+  font-family: 'Roboto Slab', serif;
+}
+.projects{
+  margin-top: 5rem;
+}
+  /* End About-Us */
+  
+  @media screen and (max-width: 768px) {
+    .leftpart {
+      width: 100%;
+      padding-right: 0px;
+      padding-left: 20px;
+    }
+    .content h2 {
+      text-align: center;
+    }
+    .content .socialmedia {
+      text-align: center;
+    }
+    .imagepart {
+      width: 100%;
+      display: block;
+      margin: 50px auto;
+      padding-left: 20px;
+    }
+    .imagepart img {
+      width: 100%;
+    }
+    
+  }
+  @media screen and (max-width: 1200px) {
+   
+
+    .leftpart {
+      width: 100%;
+      padding-right: 0px;
+      padding-left: 20px;
+    }
+    .content h2 {
+      text-align: center;
+      
+    }
+    .contnet p{
+      font-size: 200px;
+    }
+    .content .socialmedia {
+      text-align: center;
+    }
+    .imagepart {
+      width: 100%;
+      display: block;
+      margin: 50px auto;
+      padding-left: 20px;
+    }
+    .imagepart img {
+      width: 100%;
+    }
+    .container-aboutus{
+      margin-top: 12%;
+    }
+    .toppart{
+      flex-direction: column-reverse;
+      justify-content: center;
+      align-items: center;
+    }
+    
+  }

@@ -99,7 +99,7 @@
 /* *Navbar Ends */
 /* *Slider */
 #slider{
-  margin-bottom: 5rem;
+ 
 }
 .slider {
   display: flex;
@@ -171,17 +171,23 @@
 /* *Slider End */
 
 /* *Middle */
+#middle{
+  
+}
 .page{
   display: flex;
   flex: 6;
-  background-color: white;
+  background-color: whitesmoke;
   justify-content: center;
+ 
 }
 .main{
   display: flex;
   flex: 1;
   max-width: 50%;
   flex-direction: column;
+  background-color: whitesmoke;
+  padding: 5rem;
 }
 .row{
   display: flex;
@@ -473,7 +479,7 @@
     }
   }
 
-  @media screen and (max-width: 1500px) {
+  @media screen and (max-width: 1755px) {
     .row:nth-child(odd) .photo img{
       height: 30rem;
       max-width: 50rem;
@@ -491,7 +497,7 @@
       max-width: 90%;
     }
   }
-  @media screen and (max-width: 900px) {
+  @media screen and (max-width: 1010px) {
     .row{
       flex-direction: column;
     }
@@ -536,9 +542,11 @@
   @media screen and (max-width: 500px) {
     .row{
       flex-direction: column;
+      margin: 15px 0;
     }
     .row:nth-child(odd){
       flex-direction: column;
+      margin: 15px 0;
     }
     .row:nth-child(odd) .photo img{
       height: 20rem;
@@ -552,7 +560,7 @@
       margin-left: 0 ;
     }
     .main{
-      max-width: 90%;
+      max-width: 100%;
     }
     .detail{
       padding: 0;
@@ -596,5 +604,10 @@
    
     .rowproject a{
       text-align: center;
+    }
+  }
+  @media screen and (max-width: 383px) {
+    .main{
+      padding: 0;
     }
   }

@@ -1,0 +1,28 @@
+#mid-part{
+    display: flex;
+    height: 80vh;
+}
+.svg{
+    display: flex;
+}
+.title{
+    display: flex;
+    font-size: 30px;
+    font-family: sans-serif;
+    padding-bottom: 2rem;
+}
+.btn{
+    display: flex;
+    font-size: 20px;
+    justify-content: center;
+    cursor: pointer;
+    border: solid #4caf50;
+    border-radius: 5rem;
+    border-width: 3px;
+    width: 25rem;
+}
+.tb{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}

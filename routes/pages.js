@@ -228,6 +228,7 @@ router.get("/sendProveMail/:email", (req, res) => {
   });
   res.redirect("/sendSuccess");
 });
+
 router.get("/activateUser/:mail", async (req, res) => {
   const path = req.params.mail;
   const decryptedEmail = cryptr.decrypt(path);
@@ -245,6 +246,7 @@ router.get("/activateUser/:mail", async (req, res) => {
     }
   );
 });
+
 router.get("/contactusSuccess", (req, res) => {
   res.render("contactusSuccess", {
     loginn: req.session.loggedinUser,

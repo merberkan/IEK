@@ -73,6 +73,15 @@
     display: flex;
     align-items: center;
 }
+@media screen and (min-width:1200px){
+
+    .svg img{
+        width: 55%;
+    }
+    #mid-part{
+        height: 135vh;
+    }
+}
 @media screen and (max-width:1200px){
 
     .svg img{
@@ -89,10 +98,16 @@
         align-items: center;
         text-align: center;
     }
+    #mid-part{
+        height: 180vh;
+    }
 }
 @media screen and (max-width:500px){
     .svg img{
         width: 85%;
+    }
+    #mid-part{
+        height: 180vh;
     }
     
 }

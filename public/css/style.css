@@ -194,7 +194,7 @@ h1{
             margin-left: 8px; 
         } 
         .dark{ 
-            background-color: #222; 
+            background-color: rgba(53,54,58,255); 
             color: #ffffff; 
             
         } 

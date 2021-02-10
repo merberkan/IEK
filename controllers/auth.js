@@ -141,31 +141,34 @@ exports.register = (req, res) => {
             if (error) {
               console.log(error);
             } else {
-              var transporter = nodemailer.createTransport({
-                service: "gmail",
-                auth: {
-                  user: "snolldestek@gmail.com",
-                  pass: "snoll123",
-                },
-                tls: {
-                  rejectUnauthorized: false,
-                },
-              });
+            const encryptedemail = cryptr.encrypt(email);
+            var transporter = nodemailer.createTransport({
+              service: "gmail",
+              auth: {
+                user: "snolldestek@gmail.com",
+                pass: "snoll123",
+              },
+              tls: {
+                rejectUnauthorized: false,
+              },
+            });
 
-              var mailOptions = {
-                from: "snolldestek@gmail.com",
-                to: email,
-                subject: "Tebrikler",
-                text: "Başarılı bir şekilde kayıdın ilk kısmını gerçekleştirdiniz ekibimiz tarafından yapılan incelemeler sonrası size gönderilecek mail ile kayıt işlemini tamamlayabilirsiniz. " 
-              };
-
-              transporter.sendMail(mailOptions, function (error, info) {
-                if (error) {
-                  console.log(error);
-                } else {
-                  console.log("Email sent: " + info.response);
-                }
-              });
+            var mailOptions = {
+              from: "snolldestek@gmail.com",
+              to: email,
+              subject: "Tebrikler",
+              text:
+                "Destek ekibimiz tarafından üyeliğiniz kabul edilmiştir bu bağlantıya tıklayarak üyeliğinizi aktifleştirebilirsiniz http://localhost:3000/activateUser/" +
+                encryptedemail +
+                "  İşletme ve Ekonomi kulübü ailesine hoşgeldiniz.",
+            };
+            transporter.sendMail(mailOptions, function (error, info) {
+              if (error) {
+                console.log(error);
+              } else {
+                console.log("Email sent: " + info.response);
+              }
+            });
               console.log(results);
               req.session.name = name;
               req.session.lname = lastname;

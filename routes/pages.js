@@ -239,12 +239,26 @@ router.get("/activateUser/:mail", async (req, res) => {
       if (error) {
         console.log(error);
       } else {
+        db.query(
+          "SELECT * FROM Users WHERE Users.email = ?",
+          [decryptedEmail],
+          (err, result) => {
+            const User = [];
+            if (err) {
+              console.log(err);
+            }else{
         res.render("activeSuccess", {
           loginn: req.session.loggedinUser,
+          name:result[0].firstname,
+          lastname:result[0].lastname,
         });
       }
+    });
+      }
     }
+    
   );
+  
 });
 
 router.get("/contactusSuccess", (req, res) => {

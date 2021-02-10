@@ -47,13 +47,16 @@
         <h1>Giriş Yap</h1>
         <div class="textbox">
             <i class="far fa-user"></i>
-            <input type="text" placeholder="Mail Adresiniz" name="" value="">
+            <input type="text" placeholder="Mail Adresiniz" name="email" id="email" value="" required>
         </div>
         <div class="textbox">
             <i class="fas fa-unlock-alt"></i>
-            <input type="password" placeholder="Şifreniz" name="" value="">
+            <input type="password" placeholder="Şifreniz" name="password" id="password" value="" required>
         </div>
-            <input class="btn" type="submit" name="" value="Giriş">
+            <input class="btn" type="submit" name="" value="Giriş"/>
+            <% if(message){ %>
+                <h4 style="color : black ; background-color: rgba(58, 172, 35, 0.432); border: 2px solid black; max-width: 200px; margin-top: 3px;" ><%=message%></h4>
+                <% } %>
             <div class="reg-for">
                 <a href="/forgetPassword" style="color: white;">Şifremi Unuttum</a>
             </div>

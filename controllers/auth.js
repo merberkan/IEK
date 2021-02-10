@@ -19,16 +19,13 @@ const db = mysql.createConnection({
 
 exports.login = async (req, res) => {
   try {
-    const {
-    email,
-    password
-    } = req.body;
+    const { email, password } = req.body;
     const loggedinUser = Boolean;
     const emailAddress = email;
     let userRole;
     if (!email || !password) {
       return res.status(400).render("login", {
-        message: "please provide an email or password ",
+        message: "Lütfen kutucukları boş bırakmayınız",
         loginn: req.session.loggedinUser,
       });
     }
@@ -49,9 +46,8 @@ exports.login = async (req, res) => {
           results == "" ||
           !(await bcrypt.compare(password, results[0].password))
         ) {
-          req.session.message = "email or password incorrect";
           res.render("login", {
-            message: req.session.message,
+            message: "Email veya şifre hatalı",
             loginn: req.session.loggedinUser,
             adminn: req.session.adminUser,
             ownerr: req.session.ownerUser,
@@ -223,9 +219,9 @@ exports.contactus = (req, res) => {
     subject: "Destek Ekibinin Dikkatine ",
     text: "Destek ekibinin dikkatine " +
       nameS +
-      " isimli kullanıcı destek ekibimize şu mesajı bıraktı " +
+      " isimli kullanıcı destek ekibimize şu mesajı bıraktı ----------- " +
       message +
-      " En kısa sürede değerlendirilip kullanıcıya geri dönülmesi gerekmektedir . İyi çalışmalar",
+      " --------- En kısa sürede değerlendirilip kullanıcıya geri dönülmesi gerekmektedir . İyi çalışmalar",
   };
   transporter.sendMail(mailOptions, function (error, info) {
     if (error) {
@@ -235,7 +231,7 @@ exports.contactus = (req, res) => {
     }
   });
   req.session.contactname = nameS;
-  res.redirect("/contactusSuccess");
+  res.redirect("/sendSuccess");
 };
 
 exports.adminPanel = (req, res) => {

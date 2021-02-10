@@ -187,6 +187,14 @@ router.get("/registerSuccess", (req, res) => {
     lastname: req.session.lname,
   });
 });
+router.get("/members", (req, res) => {
+  res.render("members", {
+    loginn: req.session.loggedinUser,
+    email: req.session.emailAddress,
+    name: req.session.name,
+    lastname: req.session.lname,
+  });
+});
 router.get("/sendProveMail/:email", (req, res) => {
   const path = req.params.email;
   const encryptedemail = cryptr.encrypt(path);

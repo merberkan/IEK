@@ -189,6 +189,9 @@ a1.go:hover{
   .a1_img2{
       max-width: 20rem;
   }
+  .main2{
+      height: 20%;
+  }
 }
   @media screen and (max-width: 900px) {
     .a1_img2{

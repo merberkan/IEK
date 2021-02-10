@@ -166,7 +166,11 @@
 }
 
 /* End Contact Us Section */
-
+@media screen and (min-width:1200px){
+    #contact{
+        padding-top: 7rem;
+    }
+}
 @media (max-width: 1200px) {
    
 

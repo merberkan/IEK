@@ -3,10 +3,7 @@ window.onload = function () {
   var slideImage = document.getElementById("slide-image");
   var h1 = document.getElementById("tet");
   var images = ["/images/etkinlik.png", "/images/main.jfif"];
-  var text = [
-    "Senin Dünyan Senin Kuralların",
-    "Oyunun Kurallarını Sen Belirle",
-  ];
+  var text = ["#SeninAilen", "#SeninAilen"];
 
   var counter = 1;
   div.innerHTML = "";

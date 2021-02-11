@@ -71,3 +71,37 @@
     color:white;
     justify-content: center;
 }
+ /* *Darkmode */
+ body{
+    --text-color: #222;
+    --bkg-color: #fff;
+  }
+  body.dark-mode{
+    --text-color: #eee;
+    --bkg-color: rgba(53,54,58,255);
+  
+  }
+  body.dark-mode img{
+    filter: brightness(.9) contrast(1);
+  }
+
+  body{
+    background: var(--bkg-color);
+  }
+ 
+body.dark-mode #mid-part{
+    filter:  brightness(0.9);
+}
+  h1,h2,h3,p{
+    color: var(--text-color);
+  }
+  .toggle-darkmode{
+    border-radius: 1.175rem; 
+    padding: 3px; 
+    border: none; 
+    text-decoration:none;
+  }
+  .toggle-darkmode:hover{
+    background-color: #45bba3;
+  }
+   /* *Darkmode End */

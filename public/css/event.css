@@ -116,7 +116,7 @@ img{
     margin-left: 25%;
     margin-right: 25%;
     text-transform: uppercase;
-    color: #4facfe;
+    color: #178a54;
 }
 
 .a1-text{
@@ -134,13 +134,13 @@ img{
     text-transform: uppercase;
     font-size: 1.2rem;
     color: #fff;
-    background-image: linear-gradient(to right, #4facfe 0%, #00f2fe 100%);
+    background-image: linear-gradient(to right, #188b5b 0%, #075c2a 100%);
     border-radius: .8rem;
     text-decoration: none;
 }
 
-a1.go:hover{
-    background-image: linear-gradient(to right, #00f2fe 0%, #4facfe 100%);
+.a1-go:hover{
+    background-image: linear-gradient(to right,  #0f583a 0%, #052c15 100%);
 }
 
 
@@ -168,7 +168,9 @@ a1.go:hover{
     background-color: #eee;
  
 }
-
+.a1_info{
+    text-align: center;
+}
 .a1_img2{
 
     max-width: 30rem;
@@ -227,6 +229,51 @@ a1.go:hover{
         margin-top: 35%;
     }
 }
+ /* *Darkmode */
+ body{
+    --text-color: #222;
+    --bkg-color: #fff;
+  }
+  body.dark-mode{
+    --text-color: #eee;
+    --bkg-color: rgba(53,54,58,255);
+  
+  }
+  body.dark-mode img{
+    filter: brightness(.9) contrast(1);
+  }
+
+  body{
+    background: var(--bkg-color);
+  }
+  body.dark-mode .main3{
+      background-color: whitesmoke;
+  }
+  body.dark-mode .main2{
+    background-color: whitesmoke;
+}
+  body.dark-mode #middleevents{
+      background-color: rgba(53,54,58,255);
+  }
+  body.dark-mode .b1{
+    background-color: rgba(53,54,58,255);
+}
+body.dark-mode .middle2{
+    background-color: rgba(53,54,58,255);
+}
+  h1,h2,h3,p{
+    color: var(--text-color);
+  }
+  .toggle-darkmode{
+    border-radius: 1.175rem; 
+    padding: 3px; 
+    border: none; 
+    text-decoration:none;
+  }
+  .toggle-darkmode:hover{
+    background-color: #45bba3;
+  }
+   /* *Darkmode End */
 @media screen and (max-width: 500px){
     .main2{
         padding: 2.5rem;

@@ -48,6 +48,17 @@ ul {
 .manage .t2{
   font-size: 30px;
   color: white;
+  animation: animmm 2.7s;
+}
+@keyframes animmm{
+  0%{
+    opacity: 0;
+  }
+  99%{
+    opacity: 0;
+  } 100%{
+    opacity: 1;
+  }
 }
 .a1{
     display: flex;

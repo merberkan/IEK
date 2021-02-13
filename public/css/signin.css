@@ -15,6 +15,14 @@
     flex-direction: column;
 }
 
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+    transition: all 5000s ease-in-out 0s;
+    transition-property: background-color, color;
+}
+
 .login-box h1 {
     display: flex;
     float: left;

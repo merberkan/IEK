@@ -27,11 +27,13 @@
             <li><a href="/">Anasayfa</a></li>
             <li><a href="/events">Etkinlikler</a></li>
             <li>
-              <a href="">Hakkımızda</a></li>
+              <a href="/aboutus">Hakkımızda</a></li>
             <li><a href="/members">Yönetim Ekibi</a></li>
             <li><a href="/members2">Çalışma Ekibi</a></li>
             <% if(loginn){ %>
-              <li style="color: aliceblue; font-size: small;"> Hoşgeldiniz, <br> <%=name%> <%=lastname%> </li>
+              <span class="spanwelcome">
+
+              <li class="Welcome"> Hoşgeldiniz <br> <%=name%> <%=lastname%> </li></span>
               <li class="entrance"><a href="/logout">Çıkış Yap</a></li>
               <% } else{ %>
               <li class="entrance"><a href="/login">Giriş Yap</a></li>
@@ -171,7 +173,7 @@
     </div>
   </section>
   <!-- *Footer End -->
-  <script src="/views/hb.js"></script>
+  <script src="/hb.js"></script>
   <script src="darkmode.js"></script>
 </body>
 

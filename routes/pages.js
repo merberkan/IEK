@@ -18,7 +18,7 @@ router.get("/", (req, res) => {
     email: req.session.emailAddress,
     loginn: req.session.loggedinUser,
     name: req.session.loginname,
-    lastname:req.session.loginlastname,
+    lastname: req.session.loginlastname,
   });
 });
 router.get("/register", (req, res) => {
@@ -56,7 +56,7 @@ router.get("/contactus", (req, res) => {
     loginn: req.session.loggedinUser,
     adminn: req.session.adminUser,
     name: req.session.loginname,
-    lastname:req.session.loginlastname,
+    lastname: req.session.loginlastname,
   });
 });
 
@@ -66,7 +66,7 @@ router.get("/Useragreement", (req, res) => {
     loginn: req.session.loggedinUser,
     adminn: req.session.adminUser,
     name: req.session.loginname,
-    lastname:req.session.loginlastname,
+    lastname: req.session.loginlastname,
   });
 });
 
@@ -89,7 +89,7 @@ router.get("/UserPanel", (req, res) => {
       loginn: req.session.loggedinUser,
       adminn: req.session.adminUser,
       name: req.session.loginname,
-      lastname:req.session.loginlastname,
+      lastname: req.session.loginlastname,
     });
   });
 });
@@ -100,7 +100,7 @@ router.get("/aboutus", (req, res) => {
     loginn: req.session.loggedinUser,
     adminn: req.session.adminUser,
     name: req.session.loginname,
-    lastname:req.session.loginlastname,
+    lastname: req.session.loginlastname,
   });
 });
 
@@ -110,7 +110,7 @@ router.get("/privacypolicy", (req, res) => {
     loginn: req.session.loggedinUser,
     adminn: req.session.adminUser,
     name: req.session.loginname,
-    lastname:req.session.loginlastname,
+    lastname: req.session.loginlastname,
   });
 });
 router.get("/events", (req, res) => {
@@ -119,7 +119,7 @@ router.get("/events", (req, res) => {
     loginn: req.session.loggedinUser,
     adminn: req.session.adminUser,
     name: req.session.loginname,
-    lastname:req.session.loginlastname,
+    lastname: req.session.loginlastname,
     ownerr: req.session.ownerUser,
   });
 });
@@ -210,8 +210,8 @@ router.get("/members2", (req, res) => {
   res.render("members2", {
     loginn: req.session.loggedinUser,
     email: req.session.emailAddress,
-    name: req.session.name,
-    lastname: req.session.lname,
+    name: req.session.loginname,
+    lastname: req.session.loginlastname,
   });
 });
 
@@ -266,19 +266,18 @@ router.get("/activateUser/:mail", async (req, res) => {
             const User = [];
             if (err) {
               console.log(err);
-            }else{
-        res.render("activeSuccess", {
-          loginn: req.session.loggedinUser,
-          name:result[0].firstname,
-          lastname:result[0].lastname,
-        });
-      }
-    });
+            } else {
+              res.render("activeSuccess", {
+                loginn: req.session.loggedinUser,
+                name: result[0].firstname,
+                lastname: result[0].lastname,
+              });
+            }
+          }
+        );
       }
     }
-    
   );
-  
 });
 
 router.get("/contactusSuccess", (req, res) => {
@@ -303,6 +302,7 @@ router.get("/sendSuccess", (req, res) => {
 });
 
 //Easter Egg
+//Bunu Yazan Tosun Okuyana Kosun
 router.get("/PandanınPanı", (req, res) => {
   const encryptedString = cryptr.encrypt("Pandanın_Panı_Atılayın_Amı");
   console.log(encryptedString);

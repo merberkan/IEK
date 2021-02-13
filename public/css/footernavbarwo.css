@@ -199,6 +199,12 @@
       color: white;
       text-decoration: none;
   }
+  .Welcome{
+    color: white;
+  }
+ 
+
+
     /* End Footer */
     /* keyframes */
     @keyframes text_display {
@@ -228,7 +234,7 @@
         flex: 1 0px;
       }
     }
-    @media screen and (min-width: 900px) {
+    @media screen and (min-width: 1020px) {
       #header .hb {
         display: none;
       }
@@ -259,6 +265,10 @@
       #header .entrance:hover {
         background-color: rgb(21, 128, 78);
         border-radius: 10%;
+      }
+      .Welcome{
+        font-size: 1.5rem;
+        text-align: center;
       }
       .dropbtn {
         background-color: #4CAF50;
@@ -310,11 +320,49 @@
       @media screen and (max-width: 1500px) {
       
       }
-      @media screen and (max-width: 900px) {
+      @media screen and (max-width: 1019px) {
      
         .header .navbar{
           justify-content: space-between;
           padding: 0 30px;
+        }
+        
+        ul{
+          display: flex;
+          flex-direction: column;
+        }
+        ul li:first-child{
+          order: 2;
+        }
+        ul li:nth-child(2){
+          order: 3;
+        }
+        ul li:nth-child(3){
+          order: 4;
+        }
+        ul li:nth-child(4){
+          order: 5;
+        }
+        ul li:nth-child(5){
+          order: 6;
+        }
+        ul li:nth-child(6){
+          order: 1;
+        }
+        ul li:nth-child(7){
+          order: 7;
+        }
+        .Welcome{
+          padding-bottom: 20%;
+          font-size: 5rem;
+          text-align: center;
+        
+        }
+        .spanwelcome{
+          opacity: 0;
+          animation: 4s fade;
+          animation-fill-mode: forwards;
+          transition: opacity 1.5;
         }
       }
       @media screen and (max-width: 500px) {
@@ -335,4 +383,12 @@
           min-height: 5vh;
         }
       
+      }
+      @keyframes fade{
+        from{
+          opacity: 0;
+        }
+        to{
+          opacity: 1;
+        }
       }

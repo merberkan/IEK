@@ -1,0 +1,42 @@
+#mid-part{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    height: 100vh;
+}
+.mainpart {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+.title{
+    font-size: 30px;
+    display: flex;
+    flex-direction: column;
+}
+.welcomebutton{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+.btn{
+    display: flex;
+    justify-content: center;
+    padding-bottom: 30px;
+
+}
+.button:hover {background-color: #3e8e41}
+
+.button{
+    padding: 5px;
+    border-radius: 1rem;
+    background-color: #4caf50;
+    font-size: 16px;
+    color: white;
+    cursor: pointer;
+    width: 20rem;
+    height: 5rem;
+}

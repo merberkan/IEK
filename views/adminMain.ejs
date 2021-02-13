@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/css/style.css" />
+    <link rel="stylesheet" href="/css/adminMain.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" />
+    <title>Anasayfa</title>
+    <script src="/views/mainpage.js"></script>
+</head>
+
+<body>
+    <!-- *Navbar -->
+    <section id="header">
+        <div class="header container">
+            <div class="navbar">
+                <div class="logo">
+                    <a href="/"><img src="images/logo.png" class="logoimg" /></a>
+                </div>
+                <div class="navlist">
+                    <div class="hb">
+                        <div class="bar"></div>
+                    </div>
+                    <ul>
+                        <li><a href="/">Anasayfa</a></li>
+                        <li><a href="/events">Etkinlikler</a></li>
+                        <li><a href="/aboutus">Hakkımızda</a></li>
+                        <li><a href="/members">Yönetim Ekibi</a></li>
+                        <li><a href="/members2">Çalışma Ekibi</a></li>
+                        <% if(loginn){ %>
+                            <% if(adminn){ %>
+                                <li class="entrance" style="margin-right:20px ;"><a href="/adminMain">Admin</a></li>
+                                <% } %>
+                        <li class="Welcome"> Hoşgeldiniz <br> <%=name%> <%=lastname%> </li></span>
+                        <li class="entrance"><a href="/logout">Çıkış Yap</a></li>
+                        <% } else{ %>
+                        <li class="entrance"><a href="/login">Giriş Yap</a></li>
+                        <li class="entrance"><a href="/register">Üye Ol</a></li>
+                        <% } %>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- *Navbar End -->
+    <!-- Mid-part-->
+    <section id="mid-part">
+    <div class="svg">
+        <img src="/images/admin.svg">
+    </div>
+    <div class="mainpart">
+        <div class="title">
+            <div class="namep">
+                <h3 style="padding-bottom: 30px;">Admin Paneline Hoşgeldiniz</h3>
+            </div>
+            <div class="welcomebutton" style="margin-bottom: 3rem">
+                <a href="/"><button class="button">Anasayfaya Git</button></a>
+            </div>
+            <div class="btn">
+                <a href="/EventPanel"><button class="button">Etkinlik Paneline Git</button></a>
+            </div>
+            <div class="btn">
+                <a href="/UserPanel"><button class="button">Kullanıcı Paneline Git</button></a>
+            </div>
+        </div>
+    </div>
+</section>
+    <!--Mid-part End-->
+    <!-- *Footer -->
+    <section id="footer" style="margin-top: 0">
+        <div class="footer">
+            <div class="fo">
+                <div class="footerleft">
+                    <div class="log">
+                        <a href="/">
+                            <h1 style="color: white; font-size: 3rem">
+                                <img src="/images/logo.png" style="width: 5rem; border-radius: 50%" />
+                            </h1>
+                        </a>
+                        <p style="color: white">
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam
+                            nesciunt, autem aperiam suscipit dolore provident illo
+                            perferendis. Numquam, rerum ab.
+                        </p>
+                    </div>
+                    <div class="socialmedia">
+                        <div class="socialitem">
+                            <a href="https://tr.linkedin.com/company/i%CC%87%C5%9Fletme-ve-ekonomi-kul%C3%BCb%C3%BC?trk=public_profile_topcard-current-company"
+                                target="_blank" class="fab fa-linkedin text-blue icons fa-3x"></a>
+                        </div>
+                        <div class="socialitem">
+                            <a href="https://twitter.com/isletmeekonomi" target="_blank"
+                                class="fab fa-twitter text-light-blue icons fa-3x"></a>
+                        </div>
+                        <div class="socialitem">
+                            <a href="https://www.instagram.com/fmvisletmeekonomi/" target="_blank"
+                                class="fab fa-instagram text-white icons fa-3x"></a>
+                        </div>
+                    </div>
+                </div>
+                <ul class="footerright">
+                    <li>
+                        <h2 style="color: white">Kurumsal</h2>
+                        <ul class="box">
+                            <li><a href="/aboutus">Hakkımızda</a></li>
+                            <li><a href="/contactus">İletişim</a></li>
+                            <li>
+                                <button class="toggle-darkmode">Karanlık Mod</button>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+            <div class="footerbottom">
+                <p style="color: white">Copyright © 2021 İEK</p>
+            </div>
+        </div>
+    </section>
+    <!-- *Footer End -->
+    <script src="hb.js"></script>
+    <script src="darkmode.js"></script>
+</body>
+
+</html>

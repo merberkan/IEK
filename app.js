@@ -43,6 +43,7 @@ db.connect((error) => {
     }
 })
 app.use('/auth' ,require('./routes/auth'));
+app.use('/adminPanel',require('./routes/adminPanel'));
 app.use('/', require('./routes/pages'));
 // app.use((req,res) => {
 //     if(req.statusCode == null || req.statusCode == 404){

@@ -1,0 +1,58 @@
+#adminPanel{
+    display: flex;
+    flex-direction: column;
+    background-image: url(/images/cool-background.png);
+    background-size: cover;
+}
+.button{
+    padding: 5px;
+    border-radius: 1.175rem;
+    background-color: #4caf50;
+    font-size: 16px;
+    color: white;
+    cursor: pointer;
+}
+.button:hover {background-color: #3e8e41}
+.table{
+    font-size: 18px;
+}
+.b{
+    padding-top: 2%;
+    padding-bottom: 2%;
+}
+.showpart{
+    padding-top: 1%;
+    display: flex;
+}
+.td1{
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+.td2{
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding-top: 20px;
+}
+.td3{
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+.td4{
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+.td5{
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+.tt{
+    display: flex;
+    flex-direction: column;
+    padding-top: 70px;
+    text-align: center;
+}

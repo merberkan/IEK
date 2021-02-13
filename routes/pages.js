@@ -17,6 +17,7 @@ router.get("/", (req, res) => {
   res.render("index", {
     email: req.session.emailAddress,
     loginn: req.session.loggedinUser,
+    adminn: req.session.adminUser,
     name: req.session.loginname,
     lastname: req.session.loginlastname,
   });
@@ -77,6 +78,8 @@ router.get("/UserPanel", (req, res) => {
       for (var i = 0; i < result.length; i++) {
         var a = {
           role: result[i].role,
+          firstname: result[i].firstname,
+          lastname: result[i].lastname,
           email: result[i].email,
           id: result[i].id,
         };
@@ -100,13 +103,7 @@ router.get("/userdelete/:mail", (req, res) => {
     if (err) {
       console.log(err);
     }
-    res.render("UserPanel", {
-      email: req.session.emailAddress,
-      loginn: req.session.loggedinUser,
-      adminn: req.session.adminUser,
-      name: req.session.loginname,
-      lastname: req.session.loginlastname,
-    });
+    res.redirect("/UserPanel");
   });
 });
 
@@ -119,13 +116,7 @@ router.get("/setAdmin/:mail", (req, res) => {
       if (err) {
         console.log(err);
       }
-      res.render("UserPanel", {
-        email: req.session.emailAddress,
-        loginn: req.session.loggedinUser,
-        adminn: req.session.adminUser,
-        name: req.session.loginname,
-        lastname: req.session.loginlastname,
-      });
+      res.redirect("/UserPanel");
     }
   );
 });
@@ -147,13 +138,7 @@ router.get("/setUser/:mail", (req, res) => {
           ownerr: req.session.ownerUser,
         });
       }
-      res.render("UserPanel", {
-        email: req.session.emailAddress,
-        loginn: req.session.loggedinUser,
-        adminn: req.session.adminUser,
-        name: req.session.loginname,
-        lastname: req.session.loginlastname,
-      });
+      res.redirect("/UserPanel");
     }
   );
 });
@@ -263,6 +248,7 @@ router.get("/members", (req, res) => {
   res.render("members", {
     loginn: req.session.loggedinUser,
     email: req.session.emailAddress,
+    adminn: req.session.adminUser,
     name: req.session.loginname,
     lastname: req.session.loginlastname,
   });
@@ -272,6 +258,7 @@ router.get("/members2", (req, res) => {
   res.render("members2", {
     loginn: req.session.loggedinUser,
     email: req.session.emailAddress,
+    adminn: req.session.adminUser,
     name: req.session.loginname,
     lastname: req.session.loginlastname,
   });
@@ -356,6 +343,7 @@ router.get("/notFound", (req, res) => {
     loginn: req.session.loggedinUser,
     email: req.session.emailAddress,
     name: req.session.loginname,
+    adminn: req.session.adminUser,
     lastname: req.session.loginlastname,
   });
 });
@@ -363,6 +351,24 @@ router.get("/sendSuccess", (req, res) => {
   res.render("sendSuccess", {
     loginn: req.session.loggedinUser,
     email: req.session.emailAddress,
+    name: req.session.loginname,
+    lastname: req.session.loginlastname,
+  });
+});
+router.get("/adminMain", (req, res) => {
+  res.render("adminMain", {
+    email: req.session.emailAddress,
+    loginn: req.session.loggedinUser,
+    adminn: req.session.adminUser,
+    name: req.session.loginname,
+    lastname: req.session.loginlastname,
+  });
+});
+router.get("/EventPanel", (req, res) => {
+  res.render("EventPanel", {
+    email: req.session.emailAddress,
+    loginn: req.session.loggedinUser,
+    adminn: req.session.adminUser,
     name: req.session.loginname,
     lastname: req.session.loginlastname,
   });

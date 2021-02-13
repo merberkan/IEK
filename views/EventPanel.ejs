@@ -31,10 +31,11 @@
                         <li><a href="/members">Yönetim Ekibi</a></li>
                         <li><a href="/members2">Çalışma Ekibi</a></li>
                         <% if(loginn){ %>
+                            <li class="Welcome"> Hoşgeldiniz <br> <%=name%> <%=lastname%> </li></span>
                         <% if(adminn){ %>
                         <li class="entrance" style="margin-right:20px ;"><a href="/adminMain">Admin</a></li>
                         <% } %>
-                        <li class="Welcome"> Hoşgeldiniz <br> <%=name%> <%=lastname%> </li></span>
+                        
                         <li class="entrance"><a href="/logout">Çıkış Yap</a></li>
                         <% } else{ %>
                         <li class="entrance"><a href="/login">Giriş Yap</a></li>

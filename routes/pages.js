@@ -128,7 +128,7 @@ router.get("/setUser/:mail", (req, res) => {
     [path],
     (err, result) => {
       if (err) {
-        res.render("notFound",{
+        res.render("notFound", {
           messages,
           capacityControl,
           dateControl,
@@ -147,7 +147,7 @@ router.get("/events", (req, res) => {
   db.query("SELECT * FROM Iek.Events", async (err, result) => {
     const EventsArray = [];
     if (err) {
-      res.render("notFound",{
+      res.render("notFound", {
         EventsArray,
         messages,
         capacityControl,
@@ -186,7 +186,7 @@ router.get("/events/:name", (req, res) => {
     [path],
     (err, result) => {
       if (err) {
-        res.render("notFound",{
+        res.render("notFound", {
           email: req.session.emailAddress,
           loginn: req.session.loggedinUser,
           adminn: req.session.adminUser,

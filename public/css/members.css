@@ -303,3 +303,9 @@ body.dark-mode .team-area .info{
     margin-top: 1.8rem;
   }
 }
+
+@media screen and (max-width: 340px){
+  .manage .t1{
+    font-size: 41px;
+  }
+}

@@ -61,10 +61,11 @@ ul {
   }
 }
 .a1{
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    padding-top: 8rem;
+  display: grid;
+  justify-content: center;
+  grid-template-columns: repeat(auto-fill, minmax(32%, 1fr));
+  grid-gap: 20px 20px;
+  margin: 6% 5% 0% 5%;
 }
 .team-area{
   padding-top: 11rem;
@@ -78,7 +79,7 @@ ul {
 .item{
     margin-right: 2rem;
     height: 100%;
-    width: 50rem;
+    width: 100%;
 }
 .team-area .item .thumb{
     height: 30rem;
@@ -286,16 +287,8 @@ body.dark-mode .team-area .info{
 }
  /* *Darkmode End */
 @media screen and (max-width: 768px){
-    .a1 {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-    }
-    .item {
-        margin-right: 2rem;
-        margin-bottom: 2rem;
-        height: 100%;
-        width: 50%;
+    .a1{
+      grid-template-columns: repeat(auto-fill, minmax(50%, 1fr));
     }
     .manage{
       margin-top: 1.5rem;
@@ -307,8 +300,29 @@ body.dark-mode .team-area .info{
   }
 }
 
+
 @media screen and (max-width: 340px){
   .manage .t1{
     font-size: 41px;
   }
 }
+
+@media screen and (max-width: 1300px){
+  .a1{
+    margin: 9% 5% 0% 5%;
+    grid-template-columns: repeat(auto-fill, minmax(33%, 1fr));
+  }
+}
+
+@media screen and (max-width: 780px){
+  .a1{
+    margin: 13% 5% 0% 5%;
+    grid-template-columns: repeat(auto-fill, minmax(50%, 1fr));
+  }
+}
+@media screen and (max-width: 557px){
+  .a1{
+    margin: 24% 5% 0% 5%;
+  }
+}
+

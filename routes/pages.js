@@ -16,6 +16,9 @@ const db = mysql.createConnection({
 router.get("/", (req, res) => {
   res.render("index", {
     email: req.session.emailAddress,
+    loginn: req.session.loggedinUser,
+    name: req.session.loginname,
+    lastname:req.session.loginlastname,
   });
 });
 router.get("/register", (req, res) => {
@@ -52,7 +55,8 @@ router.get("/contactus", (req, res) => {
     email: req.session.emailAddress,
     loginn: req.session.loggedinUser,
     adminn: req.session.adminUser,
-    ownerr: req.session.ownerUser,
+    name: req.session.loginname,
+    lastname:req.session.loginlastname,
   });
 });
 
@@ -61,7 +65,8 @@ router.get("/Useragreement", (req, res) => {
     email: req.session.emailAddress,
     loginn: req.session.loggedinUser,
     adminn: req.session.adminUser,
-    ownerr: req.session.ownerUser,
+    name: req.session.loginname,
+    lastname:req.session.loginlastname,
   });
 });
 
@@ -83,7 +88,8 @@ router.get("/UserPanel", (req, res) => {
       email: req.session.emailAddress,
       loginn: req.session.loggedinUser,
       adminn: req.session.adminUser,
-      ownerr: req.session.ownerUser,
+      name: req.session.loginname,
+      lastname:req.session.loginlastname,
     });
   });
 });
@@ -93,7 +99,8 @@ router.get("/aboutus", (req, res) => {
     email: req.session.emailAddress,
     loginn: req.session.loggedinUser,
     adminn: req.session.adminUser,
-    ownerr: req.session.ownerUser,
+    name: req.session.loginname,
+    lastname:req.session.loginlastname,
   });
 });
 
@@ -102,7 +109,8 @@ router.get("/privacypolicy", (req, res) => {
     email: req.session.emailAddress,
     loginn: req.session.loggedinUser,
     adminn: req.session.adminUser,
-    ownerr: req.session.ownerUser,
+    name: req.session.loginname,
+    lastname:req.session.loginlastname,
   });
 });
 router.get("/events", (req, res) => {
@@ -110,6 +118,8 @@ router.get("/events", (req, res) => {
     email: req.session.emailAddress,
     loginn: req.session.loggedinUser,
     adminn: req.session.adminUser,
+    name: req.session.loginname,
+    lastname:req.session.loginlastname,
     ownerr: req.session.ownerUser,
   });
 });
@@ -191,10 +201,11 @@ router.get("/members", (req, res) => {
   res.render("members", {
     loginn: req.session.loggedinUser,
     email: req.session.emailAddress,
-    name: req.session.name,
-    lastname: req.session.lname,
+    name: req.session.loginname,
+    lastname: req.session.loginlastname,
   });
 });
+
 router.get("/members2", (req, res) => {
   res.render("members2", {
     loginn: req.session.loggedinUser,
@@ -203,6 +214,7 @@ router.get("/members2", (req, res) => {
     lastname: req.session.lname,
   });
 });
+
 router.get("/sendProveMail/:email", (req, res) => {
   const path = req.params.email;
   const encryptedemail = cryptr.encrypt(path);

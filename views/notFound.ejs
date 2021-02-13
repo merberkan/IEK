@@ -32,12 +32,13 @@
               <li><a href="/aboutus">Hakkımızda</a></li>
               <li><a href="/members">Yönetim Ekibi</a></li>
               <li><a href="/members2">Çalışma Ekibi</a></li>
-              <li class="entrance">
-                <a href="/login">Giriş Yap</a>
-              </li>
-              <li class="entrance">
-                <a href="/register">Üye Ol</a>
-              </li>
+              <% if(loginn){ %>
+                <li style="color: aliceblue; font-size: small;"> Hoşgeldiniz, <br> <%=name%> <%=lastname%> </li>
+                <li class="entrance"><a href="/logout">Çıkış Yap</a></li>
+                <% } else{ %>
+                <li class="entrance"><a href="/login">Giriş Yap</a></li>
+                <li class="entrance"><a href="/register">Üye Ol</a></li>
+                <% } %>
             </ul>
           </div>
         </div>

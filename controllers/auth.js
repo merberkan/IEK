@@ -80,6 +80,8 @@ exports.login = async (req, res) => {
           req.session.loggedinUser = true;
           req.session.emailAddress = email;
           req.session.userRole = results[0].role;
+          req.session.loginname = results[0].firstname,
+          req.session.loginlastname = results[0].lastname,
           console.log(req.session.userRole);
           if (req.session.userRole == "admin") {
             res.redirect("/adminMain");

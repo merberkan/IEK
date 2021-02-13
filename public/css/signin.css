@@ -59,6 +59,7 @@ input:-webkit-autofill:active {
     width: 80%;
     float: left;
     margin: 0 10px;
+    background-color: transparent;
 }
 
 .btn {

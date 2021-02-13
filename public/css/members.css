@@ -241,6 +241,7 @@ ul {
 
 .team-area .social li.linkedin a {
   background-color: #00b6f1;
+  filter: drop-shadow(2px 4px 6px black);
 }
 
 .team-area .social ul li a:hover {

@@ -94,6 +94,143 @@ router.get("/UserPanel", (req, res) => {
   });
 });
 
+router.get("/userdelete/:mail", (req, res) => {
+  const path = req.params.mail;
+  db.query("DELETE FROM Users Where email = ?", [path], (err, result) => {
+    if (err) {
+      console.log(err);
+    }
+    res.render("UserPanel", {
+      email: req.session.emailAddress,
+      loginn: req.session.loggedinUser,
+      adminn: req.session.adminUser,
+      name: req.session.loginname,
+      lastname: req.session.loginlastname,
+    });
+  });
+});
+
+router.get("/setAdmin/:mail", (req, res) => {
+  const path = req.params.mail;
+  db.query(
+    "UPDATE  Users SET role = 'admin' Where email = ?",
+    [path],
+    (err, result) => {
+      if (err) {
+        console.log(err);
+      }
+      res.render("UserPanel", {
+        email: req.session.emailAddress,
+        loginn: req.session.loggedinUser,
+        adminn: req.session.adminUser,
+        name: req.session.loginname,
+        lastname: req.session.loginlastname,
+      });
+    }
+  );
+});
+
+router.get("/setUser/:mail", (req, res) => {
+  const path = req.params.mail;
+  db.query(
+    "UPDATE  Users SET role = 'regUser' Where email = ?",
+    [path],
+    (err, result) => {
+      if (err) {
+        res.render("notFound",{
+          messages,
+          capacityControl,
+          dateControl,
+          email: req.session.emailAddress,
+          loginn: req.session.loggedinUser,
+          adminn: req.session.adminUser,
+          ownerr: req.session.ownerUser,
+        });
+      }
+      res.render("UserPanel", {
+        email: req.session.emailAddress,
+        loginn: req.session.loggedinUser,
+        adminn: req.session.adminUser,
+        name: req.session.loginname,
+        lastname: req.session.loginlastname,
+      });
+    }
+  );
+});
+
+router.get("/events", (req, res) => {
+  db.query("SELECT * FROM Iek.Events", async (err, result) => {
+    const EventsArray = [];
+    if (err) {
+      res.render("notFound",{
+        EventsArray,
+        messages,
+        capacityControl,
+        dateControl,
+        email: req.session.emailAddress,
+        loginn: req.session.loggedinUser,
+        adminn: req.session.adminUser,
+        ownerr: req.session.ownerUser,
+      });
+    } else {
+      for (var i = 0; i < result.length; i++) {
+        var a = {
+          EventName: result[i].EventName,
+          EventPhoto: result[i].EventPhoto,
+          EventFull: result[i].EventFull,
+          EventSummary: result[i].EventSummary,
+        };
+        EventsArray.push(a);
+      }
+      res.render("events", {
+        EventsArray,
+        email: req.session.emailAddress,
+        loginn: req.session.loggedinUser,
+        adminn: req.session.adminUser,
+        name: req.session.loginname,
+        lastname: req.session.loginlastname,
+      });
+    }
+  });
+});
+
+router.get("/events/:name", (req, res) => {
+  var path = req.params.name;
+  db.query(
+    "SELECT * FROM Iek.Events WHERE Iek.Events.EventName= ? ",
+    [path],
+    (err, result) => {
+      if (err) {
+        res.render("notFound",{
+          email: req.session.emailAddress,
+          loginn: req.session.loggedinUser,
+          adminn: req.session.adminUser,
+          name: req.session.loginname,
+          lastname: req.session.loginlastname,
+        });
+      } else {
+        const Event = [
+          {
+            EventName: result[0].EventName,
+            EventPhoto: result[0].EventPhoto,
+            EventFull: result[0].EventFull,
+            EventSummary: result[0].EventSummary,
+          },
+        ];
+        console.log(Event);
+        res.render("events2", {
+          Event,
+          email: req.session.emailAddress,
+          loginn: req.session.loggedinUser,
+          adminn: req.session.adminUser,
+          name: req.session.loginname,
+          lastname: req.session.loginlastname,
+        });
+      }
+    }
+  );
+});
+
 router.get("/aboutus", (req, res) => {
   res.render("aboutus", {
     email: req.session.emailAddress,
@@ -112,81 +249,6 @@ router.get("/privacypolicy", (req, res) => {
     name: req.session.loginname,
     lastname: req.session.loginlastname,
   });
-});
-router.get("/events", (req, res) => {
-  res.render("events", {
-    email: req.session.emailAddress,
-    loginn: req.session.loggedinUser,
-    adminn: req.session.adminUser,
-    name: req.session.loginname,
-    lastname: req.session.loginlastname,
-    ownerr: req.session.ownerUser,
-  });
-});
-
-router.get("/profile", async (req, res) => {
-  if (req.session.emailAddress) {
-    const Detail = [];
-    db.query(
-      "SELECT * FROM Users join Ticket ON Users.email = Ticket.user_email",
-      [req.session.emailAddress],
-      (err, result) => {
-        if (err) {
-          console.log(err);
-        }
-        if (result.length > 0) {
-          for (var i = 0; i < result.length; i++) {
-            if (result[i].email == req.session.emailAddress) {
-              var a = {
-                ticket_id: result[i].ticket_id,
-                event_name: result[i].event_name,
-              };
-              Detail.push(a);
-            }
-          }
-        }
-      }
-    );
-    db.query(
-      "SELECT * FROM Users WHERE Users.email = ?",
-      [req.session.emailAddress],
-      (err, result) => {
-        const User = [];
-        if (err) {
-          console.log(err);
-        }
-        if (result.length > 0) {
-          for (var i = 0; i < result.length; i++) {
-            var x = [
-              {
-                firstname: result[i].firstname,
-                lastname: result[i].lastname,
-                email: result[i].email,
-                role: result[i].role,
-              },
-            ];
-            User.push(x);
-          }
-          var length = User.length;
-          for (var j = 0; j < length - 1; j++) {
-            console.log(j, User.length);
-            User.pop();
-          }
-
-          res.render("profile", {
-            User,
-            Detail,
-            email: req.session.emailAddress,
-            loginn: req.session.loggedinUser,
-            adminn: req.session.adminUser,
-            ownerr: req.session.ownerUser,
-          });
-        }
-      }
-    );
-  } else {
-    res.redirect("/notFound");
-  }
 });
 
 router.get("/registerSuccess", (req, res) => {
@@ -284,33 +346,26 @@ router.get("/contactusSuccess", (req, res) => {
   res.render("contactusSuccess", {
     loginn: req.session.loggedinUser,
     email: req.session.emailAddress,
-    contactname: req.session.contactname,
+    name: req.session.loginname,
+    lastname: req.session.loginlastname,
   });
 });
 
 router.get("/notFound", (req, res) => {
   res.render("notFound", {
-    email: req.session.emailAddress,
     loginn: req.session.loggedinUser,
+    email: req.session.emailAddress,
+    name: req.session.loginname,
+    lastname: req.session.loginlastname,
   });
 });
 router.get("/sendSuccess", (req, res) => {
   res.render("sendSuccess", {
-    email: req.session.emailAddress,
     loginn: req.session.loggedinUser,
+    email: req.session.emailAddress,
+    name: req.session.loginname,
+    lastname: req.session.loginlastname,
   });
 });
 
-//Easter Egg
-//Bunu Yazan Tosun Okuyana Kosun
-router.get("/PandanınPanı", (req, res) => {
-  const encryptedString = cryptr.encrypt("Pandanın_Panı_Atılayın_Amı");
-  console.log(encryptedString);
-  const decryptedString = cryptr.decrypt(encryptedString);
-  console.log(decryptedString);
-
-  console.log("Şile soğuktur xd");
-
-  res.redirect("/");
-});
 module.exports = router;

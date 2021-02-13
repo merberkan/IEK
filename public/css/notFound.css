@@ -70,3 +70,20 @@
     background-color: #45bba3;
   }
    /* *Darkmode End */
+@media screen and (max-width:1400px){
+  .svg-img{
+    display: none;
+  }
+  .svg{
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+  }
+}
+@media screen and (max-width:770px){
+  .tb{
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+  }
+}

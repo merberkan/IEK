@@ -68,7 +68,7 @@ ul {
   margin: 6% 11% 0% 11%;
 }
 .team-area{
-  padding-top: 11rem;
+  padding-top: 15rem;
   background-image: url("/images/cool-background (8).png");
   background-size: cover;
   padding-bottom: 2rem;
@@ -303,6 +303,12 @@ body.dark-mode .team-area .info{
 @media screen and (min-height: 830px){
   .manage{
     margin-top: 1.8rem;
+  }
+}
+
+@media screen and (min-width: 3000px){
+  .item{
+    max-width: 80%;
   }
 }
 

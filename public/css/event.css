@@ -19,7 +19,7 @@ img{
     width: 100%;
 }
 #middleevents{
-    background-color: #eee;
+    background-image: url(/images/cool-background1.png);
 }
 
 .middle2{
@@ -27,7 +27,6 @@ img{
     height:45rem;
     display: flex;
     justify-content: center;
-    background-color: #eee;
     padding: 0 1.5rem;
     padding-top: 5%;
  
@@ -189,9 +188,26 @@ img{
     }
   }
 
+  @media screen and (min-height: 1080px) {
+    .main2{
+        max-height: 30rem;
+    }
+  }
+  @media screen and (min-width: 3100px) {
+    .main3{
+        max-width: 80%;
+    }
+    .main2{
+        max-width: 50%;
+    }
+  }
+
   @media screen and (max-width: 1000px) {
     .a1_img2{
         max-width: 40rem;
+    }
+    .main2{
+        max-height: 50rem;
     }
     .b1 {
         grid-template-columns: repeat(auto-fill, minmax(49%, 1fr));
@@ -233,6 +249,11 @@ img{
     --bkg-color: rgba(53,54,58,255);
   
   }
+  body.dark-mode #middleevents{
+    background-image: url(/images/cool-background2.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
   body.dark-mode img{
     filter: brightness(.9) contrast(1);
   }
@@ -245,15 +266,6 @@ img{
   }
   body.dark-mode .main2{
     background-color: whitesmoke;
-}
-  body.dark-mode #middleevents{
-      background-color: rgba(53,54,58,255);
-  }
-  body.dark-mode .b1{
-    background-color: rgba(53,54,58,255);
-}
-body.dark-mode .middle2{
-    background-color: rgba(53,54,58,255);
 }
   h1,h2,h3,p{
     color: var(--text-color);

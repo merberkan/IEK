@@ -3,6 +3,7 @@
     flex-direction: column;
     background-image: url(/images/cool-background.png);
     background-size: cover;
+    height: 90vh;
 }
 .button{
     padding: 5px;

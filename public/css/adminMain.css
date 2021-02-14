@@ -40,3 +40,44 @@
     width: 20rem;
     height: 5rem;
 }
+.svg{
+    width: 100%;
+}
+.total{
+    display: flex;
+    flex-direction: row;
+}
+@media screen and (max-width:1260px){
+.svg{
+    width: 30%;
+}
+.total{
+    display: flex;
+    flex-direction: column;
+}
+}
+@media screen and (max-width:1050px){
+.svg img{
+    width: 70rem;
+}    
+}
+@media screen and (max-width:750px){
+    .svg img{
+        width: 40rem;
+    }
+}
+@media screen and (max-width:420px){
+    .svg img{
+        width: 30rem;
+    }
+    .title{
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+    }
+}
+@media screen and (max-width:310px){
+    .svg img{
+        width: 25rem;
+    }
+}

@@ -4,8 +4,8 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="/public/css/style.css" />
-    <link rel="stylesheet" href="/public/css/events2.css" />
+    <link rel="stylesheet" href="/css/style.css" />
+    <link rel="stylesheet" href="/css/events2.css" />
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css"
@@ -53,19 +53,21 @@
     <section id="middle">
         <div class="page">
           <div class="main">
+            <%Event.forEach(event => { %>
             <div class="a2">
                 <div class="a3-photo">
-                    <img src="/public/images/neon-background--wallpaper.jpg">
+                    <img src="<%=event.EventPhoto%>">
                 </div>
                 <div class="a3-title">
-                    <h1>BAŞLIK</h1>
+                    <h1><%=event.EventName%></h1>
                 </div>
                 <div class="a3-text">
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus doloribus maxime temporibus soluta eum, alias in numquam assumenda impedit molestiae quidem dolore sapiente quas est aperiam pariatur ex amet. Cumque.</p>
+                    <p><%=event.EventFull%></p>
 
                 </div>
             </div>
           </div>
+          <% }) %>
         </div>
       </section>
     <!-- *Footer -->

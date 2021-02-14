@@ -148,10 +148,6 @@ router.get("/events", (req, res) => {
     const EventsArray = [];
     if (err) {
       res.render("notFound", {
-        EventsArray,
-        messages,
-        capacityControl,
-        dateControl,
         email: req.session.emailAddress,
         loginn: req.session.loggedinUser,
         adminn: req.session.adminUser,

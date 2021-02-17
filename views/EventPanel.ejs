@@ -55,20 +55,20 @@
         <form action="/adminPanel/event" method="POST">
             <div class="event-text">
                 <div class="event-top" style="justify-content: space-between">
-                    <label for="EventName">Etkinlik Adı</label>
-                    <textarea id="EventName" name="EventName" rows="10" cols="50" required></textarea>
+                    <label class="text" for="EventName">Etkinlik Adı</label>
+                    <textarea class="shadow" id="EventName" name="EventName" rows="10" cols="50" required></textarea>
                 </div>
                 <div class="event-top" style="justify-content: space-between">
-                    <label for="EventPhoto">Etkinlik Resmi</label>
-                    <textarea id="EventPhoto" name="EventPhoto" rows="10" cols="50"></textarea>
+                    <label class="text" for="EventPhoto">Etkinlik Resmi</label>
+                    <input type="file" name="EventPhoto" id="EventPhoto">
                 </div>
                 <div class="event-top" style="justify-content: space-between">
-                    <label for="EventFull">Etkinlik Açıklaması</label>
-                    <textarea id="EventFull" name="EventFull" rows="10" cols="50" required></textarea>
+                    <label class="text" for="EventFull">Etkinlik Açıklaması</label>
+                    <textarea class="shadow" id="EventFull" name="EventFull" rows="10" cols="50" required></textarea>
                 </div>
                 <div class="event-top" style="justify-content: space-between">
-                    <label for="EventSummary">Etkinlik Özeti</label>
-                    <textarea id="EventSummary" name="EventSummary" rows="10" cols="50" required></textarea>
+                    <label class="text" for="EventSummary">Etkinlik Özeti</label>
+                    <textarea class="shadow" id="EventSummary" name="EventSummary" rows="10" cols="50" required></textarea>
                 </div>
             </div>
             <div class="buttonpart">
@@ -80,17 +80,27 @@
     </div>
         <table class="table">
             <tr>
-            <th>Etkinlik No</th>
             <th>Etkinlik Adı</th>
-            <th>Etkinlik Açıklaması</th>
             <th>Etkinlik Özeti</th>
+            <th>Etkinlik Sil</th>
+            <th>Etkinlik Düzenle</th>
         </tr>
+        <%Events.forEach(event => { %>
         <tr>
-            <td>Panama</td>
-            <td>Apartmanı</td>
-            <td>Pandanın</td>
-            <td>Panı</td>
+            <td><%=event.EventName%></td>
+            <td style="width: 50%;"><%=event.EventSummary%></td>
+            <td class="td2">
+                <a href="/eventdeleteasadmin/<%=event.EventID%>"><button class="button" type="submit">
+                    Etkinliği Kaldır
+                </button></a>
+            </td>
+            <td class="td2">
+                <a href="/userdelete/"><button class="button" type="submit">
+                    Etkinliği Güncelle
+                </button></a>
+            </td>
         </tr>
+        <% }) %>
         </table>
         <div class="b" style="display: flex; justify-content: center; align-items: center">
             <a href="/adminMain">

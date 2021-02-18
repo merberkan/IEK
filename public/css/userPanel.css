@@ -8,12 +8,12 @@
 .button{
     padding: 5px;
     border-radius: 1.175rem;
-    background-color: #4caf50;
+    background-color: #17995c;
     font-size: 16px;
     color: white;
     cursor: pointer;
 }
-.button:hover {background-color: #3e8e41}
+.button:hover {background-color: #17995c}
 .table{
     font-size: 18px;
 }

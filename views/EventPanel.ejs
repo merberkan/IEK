@@ -52,7 +52,7 @@
         <div class="title">
             <h3 class="tt">Etkinlikler</h3>
         </div>
-        <form action="/adminPanel/event" method="POST">
+        <form action="/adminpanel/event" enctype="multipart/form-data" method="POST">
             <div class="event-text">
                 <div class="event-top" style="justify-content: space-between">
                     <label class="text" for="EventName">Etkinlik Adı</label>
@@ -60,7 +60,7 @@
                 </div>
                 <div class="event-top" style="justify-content: space-between">
                     <label class="text" for="EventPhoto">Etkinlik Resmi</label>
-                    <input type="file" name="EventPhoto" id="EventPhoto">
+                    <input type="file" id="image" name="image" required>
                 </div>
                 <div class="event-top" style="justify-content: space-between">
                     <label class="text" for="EventFull">Etkinlik Açıklaması</label>
@@ -70,6 +70,7 @@
                     <label class="text" for="EventSummary">Etkinlik Özeti</label>
                     <textarea class="shadow" id="EventSummary" name="EventSummary" rows="10" cols="50" required></textarea>
                 </div>
+                
             </div>
             <div class="buttonpart">
                 <a><button class="button" type="submit">Etkinlik Ekle</button></a>

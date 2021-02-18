@@ -4,6 +4,7 @@ const mysql = require("mysql");
 const dotenv = require("dotenv");
 const cookieParser = require('cookie-parser');
 const session = require('express-session');
+const multer = require("multer");
 
 
 
@@ -28,6 +29,16 @@ app.use(express.urlencoded({extended : false}));
 app.use(express.json());
 
 app.use(cookieParser());
+
+var multerstorage = multer.diskStorage({
+    destination: function(req,file,callback){
+    callback(null, path.join(__dirname,"my_uploads"));
+    },
+    filename: function (req, file, callback){
+    callback(null , Date.now() + "_" + file.originalname); 
+    }
+});
+var multerSingleUpload = multer({storage: multerstorage});
 
 app.use(session({ 
     secret: 'Özel-Anahtar',

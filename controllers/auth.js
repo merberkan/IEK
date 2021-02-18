@@ -11,12 +11,10 @@ mysql.createConnection({
 });
 
 const db = mysql.createConnection({
-  host: "localhost",
-  user: "root",
-  password: "root",
-  database: "Iek",
-  socketPath: "/Applications/MAMP/tmp/mysql/mysql.sock",
-  port: "8889" 
+  host: process.env.DATABASE_HOST,
+    user: process.env.DATABASE_USER,
+    password: process.env.DATABASE_PASSWORD,
+    database: process.env.DATABASE
 });
 
 exports.login = async (req, res) => {

@@ -1,197 +1,154 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="/css/signup.css" />
-    <link rel="stylesheet" href="/css/style.css" />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css"
-    />
-    <title>Website</title>
-  </head>
 
-  <body>
-    <!-- *Navbar -->
-    <section id="header">
-      <div class="header container">
-        <div class="navbar">
-          <div class="logo">
-            <a href="/"><img src="/images/logo.png" class="logoimg" /></a>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="/css/signup.css" />
+  <link rel="stylesheet" href="/css/style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" />
+  <title>Website</title>
+</head>
+
+<body>
+  <!-- *Navbar -->
+  <section id="header">
+    <div class="header container">
+      <div class="navbar">
+        <div class="logo">
+          <a href="/"><img src="images/iu_logo-beyaz.png" class="logoimg" /></a>
+
+          <a href="/"><img src="images/logo.png" class="logoimg2" /></a>
+        </div>
+        <div class="navlist">
+          <div class="hb">
+            <div class="bar"></div>
           </div>
-          <div class="navlist">
-            <div class="hb">
-              <div class="bar"></div>
-            </div>
-            <ul>
-              <li><a href="/">Anasayfa</a></li>
-              <li><a href="/events">Etkinlikler</a></li>
-              <li><a href="/aboutus">Hakkımızda</a></li>
-              <li><a href="/members">Yönetim Ekibi</a></li>
-              <li><a href="/members2">Çalışma Ekibi</a></li>
-              <% if(loginn){ %>
-                <li class="Welcome"> Hoşgeldiniz <br> <%=name%> <%=lastname%> </li></span>
-                <li class="entrance"><a href="/logout">Çıkış Yap</a></li>
-                <% } else{ %>
+          <ul>
+            <li><a href="/">Anasayfa</a></li>
+            <li><a href="/events">Etkinlikler</a></li>
+            <li><a href="/aboutus">Hakkımızda</a></li>
+            <li><a href="/members">Yönetim Ekibi</a></li>
+            <li><a href="/members2">Çalışma Ekibi</a></li>
+            <% if(loginn){ %>
+              <li class="Welcome"> Hoşgeldiniz <br>
+                <%=name%>
+                  <%=lastname%>
+              </li></span>
+              <li class="entrance"><a href="/logout">Çıkış Yap</a></li>
+              <% } else{ %>
                 <li class="entrance"><a href="/login">Giriş Yap</a></li>
                 <li class="entrance"><a href="/register">Üye Ol</a></li>
                 <% } %>
-            </ul>
-          </div>
+          </ul>
         </div>
       </div>
-    </section>
-    <!-- *Navbar End -->
-    <section id="mid-part">
-      <div class="boxs">
-        <div class="svg">
-          <img src="/images/design.svg" />
-          <form action="/auth/register" method="POST">
-            <div class="login-box">
-              <h1>Kayıt Ol</h1>
-              <div class="textbox">
-                <input
-                  type="text"
-                  placeholder="Adınız"
-                  name="name"
-                  id="name"
-                  value=""
-                  required
-                />
-              </div>
-              <div class="textbox">
-                <input
-                  type="text"
-                  placeholder="Soyadınız"
-                  name="lastname"
-                  id="lastname"
-                  value=""
-                  required
-                />
-              </div>
-              <div class="textbox">
-                <input
-                  type="text"
-                  placeholder="Mail adresiniz"
-                  name="email"
-                  id="email"
-                />
-              </div>
-              <div class="textbox">
-                <input
-                  type="password"
-                  placeholder="Şifre"
-                  name="password"
-                  id="password"
-                  value=""
-                  required
-                />
-              </div>
-              <div class="textbox">
-                <input
-                  type="password"
-                  placeholder="Şifre Tekrar"
-                  name="passwordConfirm"
-                  id="passwordConfirm"
-                  value=""
-                  required
-                />
-              </div>
-              <input class="btn" type="submit" name="" value="Kayıt ol" />
-              <% if(message){ %>
-              <h4
-                style="
+    </div>
+  </section>
+  <!-- *Navbar End -->
+  <section id="mid-part">
+    <div class="boxs">
+      <div class="svg">
+        <img src="/images/design.svg" />
+        <form action="/auth/register" method="POST">
+          <div class="login-box">
+            <h1>Kayıt Ol</h1>
+            <div class="textbox">
+              <input type="text" placeholder="Adınız" name="name" id="name" value="" required />
+            </div>
+            <div class="textbox">
+              <input type="text" placeholder="Soyadınız" name="lastname" id="lastname" value="" required />
+            </div>
+            <div class="textbox">
+              <input type="text" placeholder="Mail adresiniz" name="email" id="email" />
+            </div>
+            <div class="textbox">
+              <input type="password" placeholder="Şifre" name="password" id="password" value="" required />
+            </div>
+            <div class="textbox">
+              <input type="password" placeholder="Şifre Tekrar" name="passwordConfirm" id="passwordConfirm" value=""
+                required />
+            </div>
+            <input class="btn" type="submit" name="" value="Kayıt ol" />
+            <% if(message){ %>
+              <h4 style="
                   color: black;
                   background-color: rgba(238, 37, 37, 0.61);
                   border: 2px solid black;
                   max-width: 200px;
                   margin-top: 3px;
-                "
-              >
+                ">
                 <%=message%>
               </h4>
               <% } %>
-              <div class="reg-for">
-                <a href="/forgetpassword" style="color: black"
-                  >Şifremi Unuttum</a
-                >
-              </div>
-              <div class="reg-for">
-                <p>
-                  Hala hesabınız yok mu
-                  <a href="" style="color: black"> Kayıt ol?</a>
-                </p>
-              </div>
-            </div>
-          </form>
-        </div>
+                <div class="reg-for">
+                  <a href="/forgetpassword" style="color: black">Şifremi Unuttum</a>
+                </div>
+                <div class="reg-for">
+                  <p>
+                    Hala hesabınız yok mu
+                    <a href="" style="color: black"> Kayıt ol?</a>
+                  </p>
+                </div>
+          </div>
+        </form>
       </div>
-    </section>
-    <!-- *Footer -->
-    <section id="footer" style="margin-top: 0">
-      <div class="footer">
-        <div class="fo">
-          <div class="footerleft">
-            <div class="log">
-              <a href="/">
-                <h1 style="color: white; font-size: 3rem">
-                  <img
-                    src="/images/logo.png"
-                    style="width: 5rem; border-radius: 50%"
-                  />
-                </h1>
-              </a>
-              <p style="color: white">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam
-                nesciunt, autem aperiam suscipit dolore provident illo
-                perferendis. Numquam, rerum ab.
-              </p>
+    </div>
+  </section>
+  <!-- *Footer -->
+  <section id="footer" style="margin-top: 0">
+    <div class="footer">
+      <div class="fo">
+        <div class="footerleft">
+          <div class="log">
+            <a href="/">
+              <h1 style="color: white; font-size: 3rem">
+                <img src="/images/logo.png" style="width: 5rem; border-radius: 50%" />
+                <img src="/images/mesale.png" style="width: 5.5rem;" />
+              </h1>
+            </a>
+            <p style="color: white">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam
+              nesciunt, autem aperiam suscipit dolore provident illo
+              perferendis. Numquam, rerum ab.
+            </p>
+          </div>
+          <div class="socialmedia">
+            <div class="socialitem">
+              <a href="https://tr.linkedin.com/company/i%CC%87%C5%9Fletme-ve-ekonomi-kul%C3%BCb%C3%BC?trk=public_profile_topcard-current-company"
+                target="_blank" class="fab fa-linkedin text-blue icons fa-3x"></a>
             </div>
-            <div class="socialmedia">
-              <div class="socialitem">
-                <a
-                  href="https://tr.linkedin.com/company/i%CC%87%C5%9Fletme-ve-ekonomi-kul%C3%BCb%C3%BC?trk=public_profile_topcard-current-company"
-                  target="_blank"
-                  class="fab fa-linkedin text-blue icons fa-3x"
-                ></a>
-              </div>
-              <div class="socialitem">
-                <a
-                  href="https://twitter.com/isletmeekonomi"
-                  target="_blank"
-                  class="fab fa-twitter text-light-blue icons fa-3x"
-                ></a>
-              </div>
-              <div class="socialitem">
-                <a
-                  href="https://www.instagram.com/fmvisletmeekonomi/"
-                  target="_blank"
-                  class="fab fa-instagram text-white icons fa-3x"
-                ></a>
-              </div>
+            <div class="socialitem">
+              <a href="https://twitter.com/isletmeekonomi" target="_blank"
+                class="fab fa-twitter text-light-blue icons fa-3x"></a>
+            </div>
+            <div class="socialitem">
+              <a href="https://www.instagram.com/fmvisletmeekonomi/" target="_blank"
+                class="fab fa-instagram text-white icons fa-3x"></a>
             </div>
           </div>
-          <ul class="footerright">
-            <li>
-              <h2 style="color: white">Kurumsal</h2>
-              <ul class="box">
-                <li><a href="/aboutus">Hakkımızda</a></li>
-                <li><a href="/contactus">İletişim</a></li>
-                <li>
-                  <button class="toggle-darkmode">Karanlık Mod</button>
-                </li>
-              </ul>
-            </li>
-          </ul>
         </div>
-        <div class="footerbottom">
-          <p style="color: white">Copyright © 2021 İEK</p>
-        </div>
+        <ul class="footerright">
+          <li>
+            <h2 style="color: white">Kurumsal</h2>
+            <ul class="box">
+              <li><a href="/aboutus">Hakkımızda</a></li>
+              <li><a href="/contactus">İletişim</a></li>
+              <li>
+                <button class="toggle-darkmode">Karanlık Mod</button>
+              </li>
+            </ul>
+          </li>
+        </ul>
       </div>
-    </section>
-    <!-- *Footer End -->
-    <script src="hb.js"></script>
-    <script src="darkmode.js"></script>
-  </body>
+      <div class="footerbottom">
+        <p style="color: white">Copyright © 2021 İEK</p>
+      </div>
+    </div>
+  </section>
+  <!-- *Footer End -->
+  <script src="hb.js"></script>
+  <script src="darkmode.js"></script>
+</body>
+
 </html>

@@ -18,7 +18,9 @@
         <div class="header container">
             <div class="navbar">
                 <div class="logo">
-                    <a href="/"><img src="images/logo.png" class="logoimg" /></a>
+                    <a href="/"><img src="images/iu_logo-beyaz.png" class="logoimg" /></a>
+
+                    <a href="/"><img src="images/logo.png" class="logoimg2" /></a>
                 </div>
                 <div class="navlist">
                     <div class="hb">
@@ -31,16 +33,19 @@
                         <li><a href="/members">Yönetim Ekibi</a></li>
                         <li><a href="/members2">Çalışma Ekibi</a></li>
                         <% if(loginn){ %>
-                            <li class="Welcome"> Hoşgeldiniz <br> <%=name%> <%=lastname%> </li></span>
+                            <li class="Welcome"> Hoşgeldiniz <br>
+                                <%=name%>
+                                    <%=lastname%>
+                            </li></span>
                             <% if(adminn){ %>
                                 <li class="entrance" style="margin-right:20px ;"><a href="/adminMain">Admin</a></li>
                                 <% } %>
-                       
-                        <li class="entrance"><a href="/logout">Çıkış Yap</a></li>
-                        <% } else{ %>
-                        <li class="entrance"><a href="/login">Giriş Yap</a></li>
-                        <li class="entrance"><a href="/register">Üye Ol</a></li>
-                        <% } %>
+
+                                    <li class="entrance"><a href="/logout">Çıkış Yap</a></li>
+                                    <% } else{ %>
+                                        <li class="entrance"><a href="/login">Giriş Yap</a></li>
+                                        <li class="entrance"><a href="/register">Üye Ol</a></li>
+                                        <% } %>
                     </ul>
                 </div>
             </div>
@@ -49,28 +54,28 @@
     <!-- *Navbar End -->
     <!-- Mid-part-->
     <section id="mid-part">
-    <div class="total">
-    <div class="svg">
-        <img src="/images/admin.svg">
-    </div>
-    <div class="mainpart">
-        <div class="title">
-            <div class="namep">
-                <h3 style="padding-bottom: 30px;">Admin Paneline Hoşgeldiniz</h3>
+        <div class="total">
+            <div class="svg">
+                <img src="/images/admin.svg">
             </div>
-            <div class="welcomebutton" style="margin-bottom: 3rem">
-                <a href="/"><button class="button">Anasayfaya Git</button></a>
-            </div>
-            <div class="btn">
-                <a href="/EventPanel"><button class="button">Etkinlik Paneline Git</button></a>
-            </div>
-            <div class="btn">
-                <a href="/UserPanel"><button class="button">Kullanıcı Paneline Git</button></a>
+            <div class="mainpart">
+                <div class="title">
+                    <div class="namep">
+                        <h3 style="padding-bottom: 30px;">Admin Paneline Hoşgeldiniz</h3>
+                    </div>
+                    <div class="welcomebutton" style="margin-bottom: 3rem">
+                        <a href="/"><button class="button">Anasayfaya Git</button></a>
+                    </div>
+                    <div class="btn">
+                        <a href="/EventPanel"><button class="button">Etkinlik Paneline Git</button></a>
+                    </div>
+                    <div class="btn">
+                        <a href="/UserPanel"><button class="button">Kullanıcı Paneline Git</button></a>
+                    </div>
+                </div>
             </div>
         </div>
-    </div>
-</div>
-</section>
+    </section>
     <!--Mid-part End-->
     <!-- *Footer -->
     <section id="footer" style="margin-top: 0">
@@ -81,6 +86,7 @@
                         <a href="/">
                             <h1 style="color: white; font-size: 3rem">
                                 <img src="/images/logo.png" style="width: 5rem; border-radius: 50%" />
+                                <img src="/images/mesale.png" style="width: 5.5rem;" />
                             </h1>
                         </a>
                         <p style="color: white">

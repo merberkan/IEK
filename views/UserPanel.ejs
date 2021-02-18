@@ -18,7 +18,9 @@
     <div class="header container">
       <div class="navbar">
         <div class="logo">
-          <a href="/"><img src="images/logo.png" class="logoimg" /></a>
+          <a href="/"><img src="images/iu_logo-beyaz.png" class="logoimg" /></a>
+
+          <a href="/"><img src="images/logo.png" class="logoimg2" /></a>
         </div>
         <div class="navlist">
           <div class="hb">
@@ -31,16 +33,19 @@
             <li><a href="/members">Yönetim Ekibi</a></li>
             <li><a href="/members2">Çalışma Ekibi</a></li>
             <% if(loginn){ %>
-              <li class="Welcome"> Hoşgeldiniz <br> <%=name%> <%=lastname%> </li></span>
+              <li class="Welcome"> Hoşgeldiniz <br>
+                <%=name%>
+                  <%=lastname%>
+              </li></span>
               <% if(adminn){ %>
                 <li class="entrance" style="margin-right:20px ;"><a href="/adminMain">Admin</a></li>
                 <% } %>
-        
-            <li class="entrance"><a href="/logout">Çıkış Yap</a></li>
-            <% } else{ %>
-            <li class="entrance"><a href="/login">Giriş Yap</a></li>
-            <li class="entrance"><a href="/register">Üye Ol</a></li>
-            <% } %>
+
+                  <li class="entrance"><a href="/logout">Çıkış Yap</a></li>
+                  <% } else{ %>
+                    <li class="entrance"><a href="/login">Giriş Yap</a></li>
+                    <li class="entrance"><a href="/register">Üye Ol</a></li>
+                    <% } %>
           </ul>
         </div>
       </div>
@@ -50,43 +55,51 @@
 
   <!-- Admin Panel -->
   <section id="adminPanel">
-      <div class="userpart">
-        <h3 style="font-size: 24px; margin: 10px; color:black" class="tt">
-          Kullanıcılar
-        </h3>
-        <div class="buttonpart"></div>
-        <div class="showpart">
-          <table style="width: 100%" class="table">
-            <tr>
-              <th>Fonksiyon:Rol Belirle</th>
-              <th>Fonksyion:Kullanıcı Sil</th>
-              <th>Kullanıcı Adı</th>
-              <th>Kullanıcı Maili</th>
-              <th>Kullanıcı Rolü</th>
-            </tr>
-            <% if(Users.length >0){%> <%Users.forEach(user => { %>
-            <tr>
-              <td class="td5"> 
-                <a href="/setAdmin/<%=user.email%>"><button class="button" type="submit">Admin Yap</button></a>
-                <a href="/setUser/<%=user.email%>"><button class="button" type="submit">Üye Yap</button></a>
-              </td>
+    <div class="userpart">
+      <h3 style="font-size: 24px; margin: 10px; color:black" class="tt">
+        Kullanıcılar
+      </h3>
+      <div class="buttonpart"></div>
+      <div class="showpart">
+        <table style="width: 100%" class="table">
+          <tr>
+            <th>Fonksiyon:Rol Belirle</th>
+            <th>Fonksyion:Kullanıcı Sil</th>
+            <th>Kullanıcı Adı</th>
+            <th>Kullanıcı Maili</th>
+            <th>Kullanıcı Rolü</th>
+          </tr>
+          <% if(Users.length>0){%> <%Users.forEach(user=> { %>
+              <tr>
+                <td class="td5">
+                  <a href="/setAdmin/<%=user.email%>"><button class="button" type="submit">Admin Yap</button></a>
+                  <a href="/setUser/<%=user.email%>"><button class="button" type="submit">Üye Yap</button></a>
+                </td>
 
-              <td class="td2">
-                <a href="/userdelete/<%=user.email%>"><button class="button" type="submit">
-                    Kullanıcıyı Sil
-                  </button></a>
-              </td>
-              <td class="td1"><%=user.firstname%> <%=user.lastname%></td>
-              <td class="td3"><%=user.email%></td>
-              <td class="td4"><%=user.role%></td>
-            </tr>
-            <% }) %> <% } %>
-          </table>
-        </div>
+                <td class="td2">
+                  <a href="/userdelete/<%=user.email%>"><button class="button" type="submit">
+                      Kullanıcıyı Sil
+                    </button></a>
+                </td>
+                <td class="td1">
+                  <%=user.firstname%>
+                    <%=user.lastname%>
+                </td>
+                <td class="td3">
+                  <%=user.email%>
+                </td>
+                <td class="td4">
+                  <%=user.role%>
+                </td>
+              </tr>
+              <% }) %>
+                <% } %>
+        </table>
       </div>
-      <div class="b" style="display: flex; justify-content: center;">
-        <a href="/adminMain">
-          <button style="
+    </div>
+    <div class="b" style="display: flex; justify-content: center;">
+      <a href="/adminMain">
+        <button style="
                 padding: 5px;
                 border-radius: 1.175rem;
                 border: 1px black solid;
@@ -95,9 +108,9 @@
                 font-size: 16px;
                 color: white;
               ">
-            Ana Sayfana Dön
-          </button></a>
-      </div>
+          Ana Sayfana Dön
+        </button></a>
+    </div>
   </section>
 
   <!-- End Admin Panel -->
@@ -110,6 +123,7 @@
             <a href="/">
               <h1 style="color: white; font-size: 3rem">
                 <img src="/images/logo.png" style="width: 5rem; border-radius: 50%" />
+                <img src="/images/mesale.png" style="width: 5.5rem;" />
               </h1>
             </a>
             <p style="color: white">

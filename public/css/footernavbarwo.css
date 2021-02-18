@@ -18,9 +18,13 @@
     background: gray;
   }
   .logoimg{
-      width: 5rem;
-      border-radius: 50%;
-  }
+    width: 25rem;
+}
+.logoimg2{
+  border-radius: 50%;
+   width: 4.3rem;
+   margin-left: 10px;
+}
 /* *Navbar */
 #header {
   position: fixed;
@@ -234,7 +238,7 @@
         flex: 1 0px;
       }
     }
-    @media screen and (min-width: 1020px) {
+    @media screen and (min-width: 1060px) {
       #header .hb {
         display: none;
       }
@@ -366,8 +370,11 @@
         }
       }
       @media screen and (max-width: 500px) {
-        .logo img{
-          width: 4.5rem;
+        .logoimg{
+          width: 20.5rem;
+        }
+        .logoimg2{
+          width: 3.8rem;
         }
         #header .hb{
           height: 45px;
@@ -383,6 +390,17 @@
           min-height: 5vh;
         }
       
+      }
+      @media screen and (max-width: 383px) {
+        .main{
+          padding: 0;
+        }
+        .logoimg{
+          width: 12.5rem;
+        }
+        .logoimg2{
+          width: 2.4rem;
+        }
       }
       @keyframes fade{
         from{

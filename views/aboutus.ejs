@@ -17,7 +17,9 @@
     <div class="header container">
       <div class="navbar">
         <div class="logo">
-          <a href="/"><img src="/images/logo.png" class="logoimg" /></a>
+          <a href="/"><img src="images/iu_logo-beyaz.png" class="logoimg" /></a>
+
+          <a href="/"><img src="images/logo.png" class="logoimg2" /></a>
         </div>
         <div class="navlist">
           <div class="hb">
@@ -27,21 +29,26 @@
             <li><a href="/">Anasayfa</a></li>
             <li><a href="/events">Etkinlikler</a></li>
             <li>
-              <a href="/aboutus">Hakkımızda</a></li>
+              <a href="/aboutus">Hakkımızda</a>
+            </li>
             <li><a href="/members">Yönetim Ekibi</a></li>
             <li><a href="/members2">Çalışma Ekibi</a></li>
             <% if(loginn){ %>
               <span class="spanwelcome">
-                <li class="Welcome"> Hoşgeldiniz <br> <%=name%> <%=lastname%> </li></span>
-                <% if(adminn){ %>
-                  <li class="entrance" style="margin-right:20px ;"><a href="/adminMain">Admin</a></li>
-                  <% } %>
-            
-              <li class="entrance"><a href="/logout">Çıkış Yap</a></li>
-              <% } else{ %>
-              <li class="entrance"><a href="/login">Giriş Yap</a></li>
-              <li class="entrance"><a href="/register">Üye Ol</a></li>
-              <% } %>
+                <li class="Welcome"> Hoşgeldiniz <br>
+                  <%=name%>
+                    <%=lastname%>
+                </li>
+              </span>
+              <% if(adminn){ %>
+                <li class="entrance" style="margin-right:20px ;"><a href="/adminMain">Admin</a></li>
+                <% } %>
+
+                  <li class="entrance"><a href="/logout">Çıkış Yap</a></li>
+                  <% } else{ %>
+                    <li class="entrance"><a href="/login">Giriş Yap</a></li>
+                    <li class="entrance"><a href="/register">Üye Ol</a></li>
+                    <% } %>
           </ul>
         </div>
       </div>
@@ -121,10 +128,8 @@
           <div class="log">
             <a href="/">
               <h1 style="color: white; font-size: 3rem">
-                <img
-                  src="/images/logo.png"
-                  style="width: 5rem; border-radius: 50%"
-                />
+                <img src="/images/logo.png" style="width: 5rem; border-radius: 50%" />
+                <img src="/images/mesale.png" style="width: 5.5rem;" />
               </h1>
             </a>
             <p style="color: white">
@@ -135,25 +140,16 @@
           </div>
           <div class="socialmedia">
             <div class="socialitem">
-              <a
-                href="https://tr.linkedin.com/company/i%CC%87%C5%9Fletme-ve-ekonomi-kul%C3%BCb%C3%BC?trk=public_profile_topcard-current-company"
-                target="_blank"
-                class="fab fa-linkedin text-blue icons fa-3x"
-              ></a>
+              <a href="https://tr.linkedin.com/company/i%CC%87%C5%9Fletme-ve-ekonomi-kul%C3%BCb%C3%BC?trk=public_profile_topcard-current-company"
+                target="_blank" class="fab fa-linkedin text-blue icons fa-3x"></a>
             </div>
             <div class="socialitem">
-              <a
-                href="https://twitter.com/isletmeekonomi"
-                target="_blank"
-                class="fab fa-twitter text-light-blue icons fa-3x"
-              ></a>
+              <a href="https://twitter.com/isletmeekonomi" target="_blank"
+                class="fab fa-twitter text-light-blue icons fa-3x"></a>
             </div>
             <div class="socialitem">
-              <a
-                href="https://www.instagram.com/fmvisletmeekonomi/"
-                target="_blank"
-                class="fab fa-instagram text-white icons fa-3x"
-              ></a>
+              <a href="https://www.instagram.com/fmvisletmeekonomi/" target="_blank"
+                class="fab fa-instagram text-white icons fa-3x"></a>
             </div>
           </div>
         </div>

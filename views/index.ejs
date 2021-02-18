@@ -1,272 +1,269 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="/css/style.css" />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css"
-    />
-    <title>Anasayfa</title>
-    <script src="mainpage.js"></script>
-  </head>
-  <body>
-    <!-- *Navbar -->
-    <section id="header">
-      <div class="header container">
-        <div class="navbar">
-          <div class="logo">
-            <a href="/"><img src="/images/logo.png" class="logoimg" /></a>
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="/css/style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" />
+  <title>Anasayfa</title>
+  <script src="mainpage.js"></script>
+</head>
+
+<body>
+  <!-- *Navbar -->
+  <section id="header">
+    <div class="header container">
+      <div class="navbar">
+        <div class="logo">
+          <a href="/"><img src="images/iu_logo-beyaz.png" class="logoimg" /></a>
+
+          <a href="/"><img src="images/logo.png" class="logoimg2" /></a>
+        </div>
+        <div class="navlist">
+          <div class="hb">
+            <div class="bar"></div>
           </div>
-          <div class="navlist">
-            <div class="hb">
-              <div class="bar"></div>
-            </div>
-            <ul>
-              <li><a href="/">Anasayfa</a></li>
-              <li><a href="/events">Etkinlikler</a></li>
-              <li><a href="/aboutus">Hakkımızda</a></li>
-              <li><a href="/members">Yönetim Ekibi</a></li>
-              <li><a href="/members2">Çalışma Ekibi</a></li>
-              <% if(loginn){ %>
-                <li class="Welcome"> Hoşgeldiniz <br> <%=name%> <%=lastname%> </li></span>
-                <% if(adminn){ %>
-                  <li class="entrance" style="margin-right:20px ;"><a href="/adminMain">Admin</a></li>
-                  <% } %>
-                
-                <li class="entrance"><a href="/logout">Çıkış Yap</a></li>
-                <% } else{ %>
-                <li class="entrance"><a href="/login">Giriş Yap</a></li>
-                <li class="entrance"><a href="/register">Üye Ol</a></li>
+          <ul>
+            <li><a href="/">Anasayfa</a></li>
+            <li><a href="/events">Etkinlikler</a></li>
+            <li><a href="/aboutus">Hakkımızda</a></li>
+            <li><a href="/members">Yönetim Ekibi</a></li>
+            <li><a href="/members2">Çalışma Ekibi</a></li>
+            <% if(loginn){ %>
+              <li class="Welcome"> Hoşgeldiniz <br>
+                <%=name%>
+                  <%=lastname%>
+              </li></span>
+              <% if(adminn){ %>
+                <li class="entrance" style="margin-right:20px ;"><a href="/adminMain">Admin</a></li>
                 <% } %>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </section>
-    <!-- *Navbar End -->
-    <!-- *Slider -->
-    <section id="slider">
-      <div class="container slider">
-        <img class="img-slider" src="" id="slide-image" />
-        <div class="slidertext">
-          <div id="textsliderjss">
-            <h1 id="tet" class="tett">
-              Senin Dünyan Senin Kuralların<span></span>
-            </h1>
-          </div>
-        </div>
-      </div>
-    </section>
-    <!-- *Slider End -->
-    <!-- *Middle -->
-    <section id="middle">
-      <div class="page">
-        <div class="main">
-          <h3>Değerlerimiz</h3>
-          <div class="row">
-            <div class="detail">
-              <div class="title">
-                <h1>AİLE YAPISI</h1>
-              </div>
-              <div class="text">
-                <p>
-                  #Seninailen sloganıyla yola çıkan kulübümüz farklı bölümlerden
-                  öğrencileri bir araya getirerek kulüp içinde sıcak bir aile
-                  ortamı yaratmaktadır.
-                </p>
-              </div>
-            </div>
-            <div class="photo">
-              <img class="img" src="/images/main.jfif" />
-            </div>
-          </div>
 
-          <div class="row">
-            <div class="detail">
-              <div class="title">
-                <h1>PROFESYONELLİK</h1>
-              </div>
-              <div class="text">
-                <p>
-                  Kulübümüz yapmış olduğu faaliyetlerde özverili ve profesyonel
-                  bir tutum sergilemeye özen göstermektedir. Samimi bir ortam
-                  olmasının yanısıra kurumsal bir yapıya sahiptir.
-                </p>
-              </div>
-            </div>
-            <div class="photo" style="max-width: 60rem">
-              <img class="img" src="/images/main.jfif" />
-            </div>
-          </div>
-
-          <div class="row">
-            <div class="detail">
-              <div class="title">
-                <h1>EŞİTLİK</h1>
-              </div>
-              <div class="text">
-                <p>
-                  Kulübümüzdeki her üye eşit haklara sahiptir. Her üyemize kendi
-                  sesini duyurma ve aktif olma şansı sunarak kendilerini
-                  geliştirmelerine olanak sağlarız.
-                </p>
-              </div>
-            </div>
-            <div class="photo">
-              <img class="img" src="/images/main.jfif" />
-            </div>
-          </div>
-          <div class="row">
-            <div class="detail">
-              <div class="title">
-                <h1>GELİŞİM</h1>
-              </div>
-              <div class="text">
-                <p>
-                  Belirli aralıklarla yapılan toplantılarımızda projelerimizi
-                  geliştirmeye ve iyileştirmeye özen göstermekteyiz.
-                </p>
-              </div>
-            </div>
-            <div class="photo" style="max-width: 60rem">
-              <img class="img" src="/images/main.jfif" />
-            </div>
-          </div>
-
-          <div class="past-projects">
-            <h3>Projelerimiz</h3>
-            <div class="project">
-             
-              <div class="rowproject">
-                 <img src="/images/EngelTanımayanlar.jpg" alt="" />
-                <div class="textproject">
-                  <h3>Dijital Dergi</h3>
-                  <p>
-                   Dergimizin ikinci sayısında 3 Aralık Dünya Engelliler Günü için hazırladığımız iki
-                   adet röportaj var.Avcılar Belediye Başkanı Turan Hançerli ve İstanbul Milletvekili
-                   Lokman Ayva beyefendilerle çok verimli röportajlar yaptık.Sizleri daha fazla sıkmadan 
-                   keyifli okumalar diliyoruz.
-                   Unutmayın! "Engelleri Kaldırmak Mümkün."
-                  
-                  </p>
-                  <a target="_blank" class="drivelink" href="https://drive.google.com/file/d/1tCJPucueqv4DLHpJNcpTMcTPFSPf9B2V/view">Devamını Oku...</a>
-                </div>
-              </div>
-              <div class="rowproject">
-                <img src="/images/Münazara.jpg" alt="" />
-                <div class="textproject">
-                  <h3>Online Münazara</h3>
-                  <p>
-                    Takımını kur, fikrini savun hepimize ışık ol! Sınavların bitimini muhteşem ödüllerle dolu 
-                    online münazara turnuvalarımızla kutluyoruz. İki , üç veya dört kişilik takımını oluşturduktan 
-                    sonra biyografimizdeki linkten başvuru formunu doldurabilirsin. Üzülme! Takımın yoksa 
-                    sen yine de başvur, bireysel başvurular arasından seçerek biz senin için takım oluşturacağız. 
-                    Yarışma tarihleri sınav haftama gelir diye endişelenme, hepsini gözeterek yarışma tarihlerini 
-                    birlikte belirleyeceğiz. Başvuru formunda bunun için tercihlerini de sana sorduk. 
-                    Hem eğleneceğimiz 
-                    hem öğreneceğimiz online amatör münazara turnuvamıza katılmayı unutma! Bilginle ışık saç
-                  </p>
-                </div>
-              </div>
-              <div class="rowproject">
-               <img src="/images/Osman.jpg" alt="" />
-                <div class="textproject">
-                  <h3>Dijital Dergi</h3>
-                  <p>
-                    Memur maaşıyla 147 ülke gezmiş, “Gençler Geziyor” adlı tur firmasını kurmuş
-                    Osman Muzaffer Afyon ile gerçekleştirdiğimiz elektronik röportajımızdan oluşan
-                    dijital dergi, okulumuzdaki diğer kulüplerde pek rastlanmayan eşsiz bir proje.
-                    Röportaj dergimiz 10.000+ kişiye erişti.
-                   
-                  </p>
-                  <a target="_blank" class="drivelink" href="https://drive.google.com/file/d/1-uDJGry1QOfgm6O8YHQ51eMVZv9gn4_2/view">Devamını Oku...</a>
-                </div>
-              </div>
-              <div class="rowproject">
-               <img src="/images/project5.jpg" alt="" />
-                <div class="textproject">
-                  <h3>Mentorluk Programı</h3>
-                  <p>
-                    Mentorluk programımızdaki amacımız ‘#evdekal’ dönemini en iyi şekilde
-                    değerlendirerek okulumuza yeni gelecek öğrencilere yardımcı olmak.
-                    Menti olarak başvuran öğrenciler, mentor olarak seçilen arkadaşlarımızla
-                    eşleştirilerek okul hakkındaki sorularına cevap buldular.
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-    <!-- *Middle End -->
-    <!-- *Footer -->
-    <section id="footer" style="margin-top: 0">
-      <div   class="footer">
-        <div class="fo">
-          <div class="footerleft">
-            <div class="log">
-              <a href="/">
-                <h1 style="color: white; font-size: 3rem">
-                  <img
-                    src="/images/logo.png"
-                    style="width: 5rem; border-radius: 50%"
-                  />
-                </h1>
-              </a>
-              <p style="color: white">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam
-                nesciunt, autem aperiam suscipit dolore provident illo
-                perferendis. Numquam, rerum ab.
-              </p>
-            </div>
-            <div class="socialmedia">
-              <div class="socialitem">
-                <a
-                  href="https://tr.linkedin.com/company/i%CC%87%C5%9Fletme-ve-ekonomi-kul%C3%BCb%C3%BC?trk=public_profile_topcard-current-company"
-                  target="_blank"
-                  class="fab fa-linkedin text-blue icons fa-3x"
-                ></a>
-              </div>
-              <div class="socialitem">
-                <a
-                  href="https://twitter.com/isletmeekonomi"
-                  target="_blank"
-                  class="fab fa-twitter text-light-blue icons fa-3x"
-                ></a>
-              </div>
-              <div class="socialitem">
-                <a
-                  href="https://www.instagram.com/fmvisletmeekonomi/"
-                  target="_blank"
-                  class="fab fa-instagram text-white icons fa-3x"
-                ></a>
-              </div>
-            </div>
-          </div>
-          <ul class="footerright">
-            <li>
-              <h2 style="color: white">Kurumsal</h2>
-              <ul class="box">
-                <li><a href="/aboutus">Hakkımızda</a></li>
-                <li><a href="/contactus">İletişim</a></li>
-                <li>
-                  <button class="toggle-darkmode">Karanlık Mod</button>
-                </li>
-              </ul>
-            </li>
+                  <li class="entrance"><a href="/logout">Çıkış Yap</a></li>
+                  <% } else{ %>
+                    <li class="entrance"><a href="/login">Giriş Yap</a></li>
+                    <li class="entrance"><a href="/register">Üye Ol</a></li>
+                    <% } %>
           </ul>
         </div>
-        <div class="footerbottom">
-          <p style="color: white">Copyright © 2021 İEK</p>
+      </div>
+    </div>
+  </section>
+  <!-- *Navbar End -->
+  <!-- *Slider -->
+  <section id="slider">
+    <div class="container slider">
+      <img class="img-slider" src="" id="slide-image" />
+      <div class="slidertext">
+        <div id="textsliderjss">
+          <h1 id="tet" class="tett">
+            Senin Dünyan Senin Kuralların<span></span>
+          </h1>
         </div>
       </div>
-    </section>
-    <!-- *Footer End -->
-    <script src="hb.js"></script>
-    <script src="darkmode.js"></script>
-  </body>
+    </div>
+  </section>
+  <!-- *Slider End -->
+  <!-- *Middle -->
+  <section id="middle">
+    <div class="page">
+      <div class="main">
+        <h3>Değerlerimiz</h3>
+        <div class="row">
+          <div class="detail">
+            <div class="title">
+              <h1>AİLE YAPISI</h1>
+            </div>
+            <div class="text">
+              <p>
+                #Seninailen sloganıyla yola çıkan kulübümüz farklı bölümlerden
+                öğrencileri bir araya getirerek kulüp içinde sıcak bir aile
+                ortamı yaratmaktadır.
+              </p>
+            </div>
+          </div>
+          <div class="photo">
+            <img class="img" src="/images/main.jfif" />
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="detail">
+            <div class="title">
+              <h1>PROFESYONELLİK</h1>
+            </div>
+            <div class="text">
+              <p>
+                Kulübümüz yapmış olduğu faaliyetlerde özverili ve profesyonel
+                bir tutum sergilemeye özen göstermektedir. Samimi bir ortam
+                olmasının yanısıra kurumsal bir yapıya sahiptir.
+              </p>
+            </div>
+          </div>
+          <div class="photo" style="max-width: 60rem">
+            <img class="img" src="/images/main.jfif" />
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="detail">
+            <div class="title">
+              <h1>EŞİTLİK</h1>
+            </div>
+            <div class="text">
+              <p>
+                Kulübümüzdeki her üye eşit haklara sahiptir. Her üyemize kendi
+                sesini duyurma ve aktif olma şansı sunarak kendilerini
+                geliştirmelerine olanak sağlarız.
+              </p>
+            </div>
+          </div>
+          <div class="photo">
+            <img class="img" src="/images/main.jfif" />
+          </div>
+        </div>
+        <div class="row">
+          <div class="detail">
+            <div class="title">
+              <h1>GELİŞİM</h1>
+            </div>
+            <div class="text">
+              <p>
+                Belirli aralıklarla yapılan toplantılarımızda projelerimizi
+                geliştirmeye ve iyileştirmeye özen göstermekteyiz.
+              </p>
+            </div>
+          </div>
+          <div class="photo" style="max-width: 60rem">
+            <img class="img" src="/images/main.jfif" />
+          </div>
+        </div>
+
+        <div class="past-projects">
+          <h3>Projelerimiz</h3>
+          <div class="project">
+
+            <div class="rowproject">
+              <img src="/images/EngelTanımayanlar.jpg" alt="" />
+              <div class="textproject">
+                <h3>Dijital Dergi</h3>
+                <p>
+                  Dergimizin ikinci sayısında 3 Aralık Dünya Engelliler Günü için hazırladığımız iki
+                  adet röportaj var.Avcılar Belediye Başkanı Turan Hançerli ve İstanbul Milletvekili
+                  Lokman Ayva beyefendilerle çok verimli röportajlar yaptık.Sizleri daha fazla sıkmadan
+                  keyifli okumalar diliyoruz.
+                  Unutmayın! "Engelleri Kaldırmak Mümkün."
+
+                </p>
+                <a target="_blank" class="drivelink"
+                  href="https://drive.google.com/file/d/1tCJPucueqv4DLHpJNcpTMcTPFSPf9B2V/view">Devamını Oku...</a>
+              </div>
+            </div>
+            <div class="rowproject">
+              <img src="/images/Münazara.jpg" alt="" />
+              <div class="textproject">
+                <h3>Online Münazara</h3>
+                <p>
+                  Takımını kur, fikrini savun hepimize ışık ol! Sınavların bitimini muhteşem ödüllerle dolu
+                  online münazara turnuvalarımızla kutluyoruz. İki , üç veya dört kişilik takımını oluşturduktan
+                  sonra biyografimizdeki linkten başvuru formunu doldurabilirsin. Üzülme! Takımın yoksa
+                  sen yine de başvur, bireysel başvurular arasından seçerek biz senin için takım oluşturacağız.
+                  Yarışma tarihleri sınav haftama gelir diye endişelenme, hepsini gözeterek yarışma tarihlerini
+                  birlikte belirleyeceğiz. Başvuru formunda bunun için tercihlerini de sana sorduk.
+                  Hem eğleneceğimiz
+                  hem öğreneceğimiz online amatör münazara turnuvamıza katılmayı unutma! Bilginle ışık saç
+                </p>
+              </div>
+            </div>
+            <div class="rowproject">
+              <img src="/images/Osman.jpg" alt="" />
+              <div class="textproject">
+                <h3>Dijital Dergi</h3>
+                <p>
+                  Memur maaşıyla 147 ülke gezmiş, “Gençler Geziyor” adlı tur firmasını kurmuş
+                  Osman Muzaffer Afyon ile gerçekleştirdiğimiz elektronik röportajımızdan oluşan
+                  dijital dergi, okulumuzdaki diğer kulüplerde pek rastlanmayan eşsiz bir proje.
+                  Röportaj dergimiz 10.000+ kişiye erişti.
+
+                </p>
+                <a target="_blank" class="drivelink"
+                  href="https://drive.google.com/file/d/1-uDJGry1QOfgm6O8YHQ51eMVZv9gn4_2/view">Devamını Oku...</a>
+              </div>
+            </div>
+            <div class="rowproject">
+              <img src="/images/project5.jpg" alt="" />
+              <div class="textproject">
+                <h3>Mentorluk Programı</h3>
+                <p>
+                  Mentorluk programımızdaki amacımız ‘#evdekal’ dönemini en iyi şekilde
+                  değerlendirerek okulumuza yeni gelecek öğrencilere yardımcı olmak.
+                  Menti olarak başvuran öğrenciler, mentor olarak seçilen arkadaşlarımızla
+                  eşleştirilerek okul hakkındaki sorularına cevap buldular.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- *Middle End -->
+  <!-- *Footer -->
+  <section id="footer" style="margin-top: 0">
+    <div class="footer">
+      <div class="fo">
+        <div class="footerleft">
+          <div class="log">
+            <a href="/">
+              <h1 style="color: white; font-size: 3rem">
+                <img src="/images/logo.png" style="width: 5rem; border-radius: 50%" />
+
+                <img src="/images/mesale.png" style="width: 5.5rem;" />
+              </h1>
+            </a>
+            <p style="color: white">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam
+              nesciunt, autem aperiam suscipit dolore provident illo
+              perferendis. Numquam, rerum ab.
+            </p>
+          </div>
+          <div class="socialmedia">
+            <div class="socialitem">
+              <a href="https://tr.linkedin.com/company/i%CC%87%C5%9Fletme-ve-ekonomi-kul%C3%BCb%C3%BC?trk=public_profile_topcard-current-company"
+                target="_blank" class="fab fa-linkedin text-blue icons fa-3x"></a>
+            </div>
+            <div class="socialitem">
+              <a href="https://twitter.com/isletmeekonomi" target="_blank"
+                class="fab fa-twitter text-light-blue icons fa-3x"></a>
+            </div>
+            <div class="socialitem">
+              <a href="https://www.instagram.com/fmvisletmeekonomi/" target="_blank"
+                class="fab fa-instagram text-white icons fa-3x"></a>
+            </div>
+          </div>
+        </div>
+        <ul class="footerright">
+          <li>
+            <h2 style="color: white">Kurumsal</h2>
+            <ul class="box">
+              <li><a href="/aboutus">Hakkımızda</a></li>
+              <li><a href="/contactus">İletişim</a></li>
+              <li>
+                <button class="toggle-darkmode">Karanlık Mod</button>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+      <div class="footerbottom">
+        <p style="color: white">Copyright © 2021 İEK</p>
+      </div>
+    </div>
+  </section>
+  <!-- *Footer End -->
+  <script src="hb.js"></script>
+  <script src="darkmode.js"></script>
+</body>
+
 </html>

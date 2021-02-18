@@ -12,10 +12,12 @@ dotenv.config({path : './.env'})
 const app = express();
 
 const db = mysql.createConnection({
-    host: process.env.DATABASE_HOST,
-    user: process.env.DATABASE_USER,
-    password: process.env.DATABASE_PASSWORD,
-    database: process.env.DATABASE
+    host: "localhost",
+    user: "root",
+    password: "root",
+    database: "Iek",
+    socketPath: "/Applications/MAMP/tmp/mysql/mysql.sock",
+    port: "8889" 
 });
 const publicDirectory = path.join(__dirname , './public'); //css veya js dosyalarımın konnumunu gösteriyorum
 app.use(express.static(publicDirectory)); // dosyamı servera kullanması için veriyorum
@@ -45,11 +47,11 @@ db.connect((error) => {
 app.use('/auth' ,require('./routes/auth'));
 app.use('/adminPanel',require('./routes/adminPanel'));
 app.use('/', require('./routes/pages'));
-// app.use((req,res) => {
-//     if(req.statusCode == null || req.statusCode == 404){
-//         res.redirect('/notFound');
-//     }
-// });
+app.use((req,res) => {
+    if(req.statusCode == null || req.statusCode == 404){
+        res.redirect('/notFound');
+    }
+});
 
 
 app.listen(3000, () => {

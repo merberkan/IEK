@@ -6,6 +6,8 @@ const nodemailer = require("nodemailer");
 const Cryptr = require("cryptr");
 const cryptr = new Cryptr("myTotalySecretKey");
 
+const url = process.env.URL;
+
 const db = mysql.createConnection({
   host: process.env.DATABASE_HOST,
     user: process.env.DATABASE_USER,
@@ -187,14 +189,9 @@ router.get("/events/:name", (req, res) => {
     [path],
     (err, result) => {
       if (err) {
-        res.render("notFound", {
-          email: req.session.emailAddress,
-          loginn: req.session.loggedinUser,
-          adminn: req.session.adminUser,
-          name: req.session.loginname,
-          lastname: req.session.loginlastname,
-        });
-      } else {
+        res.redirect("/notFound");
+      } 
+      if(result.length > 0){
         const Event = [
           {
             EventName: result[0].EventName,

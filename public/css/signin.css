@@ -113,4 +113,13 @@ body.dark-mode #mid-part{
   .toggle-darkmode:hover{
     background-color: #45bba3;
   }
+
    /* *Darkmode End */
+
+   .transparan{
+    width: 350px;
+    height: 440px;
+    padding: 35px 35px;
+    box-sizing: border-box;
+    box-shadow: 8px 8px 50px black;
+  }

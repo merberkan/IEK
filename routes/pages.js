@@ -7,10 +7,12 @@ const Cryptr = require("cryptr");
 const cryptr = new Cryptr("myTotalySecretKey");
 
 const db = mysql.createConnection({
-  host: process.env.DATABASE_HOST,
-  user: process.env.DATABASE_USER,
-  password: process.env.DATABASE_PASSWORD,
-  database: process.env.DATABASE,
+  host: "localhost",
+  user: "root",
+  password: "root",
+  database: "Iek",
+  socketPath: "/Applications/MAMP/tmp/mysql/mysql.sock",
+  port: "8889" 
 });
 
 router.get("/", (req, res) => {
@@ -357,13 +359,17 @@ router.get("/sendSuccess", (req, res) => {
   });
 });
 router.get("/adminMain", (req, res) => {
-  res.render("adminMain", {
-    email: req.session.emailAddress,
-    loginn: req.session.loggedinUser,
-    adminn: req.session.adminUser,
-    name: req.session.loginname,
-    lastname: req.session.loginlastname,
-  });
+  if(req.session.adminUser && req.session.loggedinUser){
+    res.render("adminMain", {
+      email: req.session.emailAddress,
+      loginn: req.session.loggedinUser,
+      adminn: req.session.adminUser,
+      name: req.session.loginname,
+      lastname: req.session.loginlastname,
+    });
+  }else{
+    res.redirect("/notFound");
+  }
 });
 router.get("/EventPanel", (req, res) => {
   if(req.session.adminUser && req.session.loggedinUser){

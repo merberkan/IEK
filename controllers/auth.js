@@ -241,52 +241,6 @@ exports.contactus = (req, res) => {
   res.redirect("/sendSuccess");
 };
 
-exports.adminPanel = (req, res) => {
-  try {
-    const {
-      EventNo,
-      EventName,
-      EventDate,
-      EventPlace,
-      EventPrice,
-      EventPhotoBackground,
-      EventPhotoUrl,
-      PerformerName,
-      EventCategory,
-      EventCapacity,
-      EventAddress,
-      EventCity,
-      owner_email,
-    } = req.body;
-    db.query(
-      "INSERT INTO Events SET ?", {
-        EventNo: EventNo,
-        EventName: EventName,
-        EventDate: EventDate,
-        EventPlace: EventPlace,
-        EventPrice: EventPrice,
-        EventPhotoBackground: EventPhotoBackground,
-        EventPhotoUrl: EventPhotoUrl,
-        PerformerName: PerformerName,
-        EventCategory: EventCategory,
-        EventCapacity: EventCapacity,
-        EventAddress: EventAddress,
-        EventCity: EventCity,
-        owner_email: owner_email,
-      },
-      (err, results) => {
-        if (err) {
-          console.log(err);
-        } else {
-          return res.redirect("/EventPanel");
-        }
-      }
-    );
-  } catch (error) {
-    console.log(error);
-  }
-};
-
 exports.contactus = (req, res) => {
   console.log("çalıştı");
 

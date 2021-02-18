@@ -245,8 +245,8 @@ router.get("/registerSuccess", (req, res) => {
     lastname: req.session.lname,
   });
 });
-router.get("/members", (req, res) => {
-  res.render("members", {
+router.get("/yonetim", (req, res) => {
+  res.render("yonetim", {
     loginn: req.session.loggedinUser,
     email: req.session.emailAddress,
     adminn: req.session.adminUser,
@@ -255,8 +255,8 @@ router.get("/members", (req, res) => {
   });
 });
 
-router.get("/members2", (req, res) => {
-  res.render("members2", {
+router.get("/calisma", (req, res) => {
+  res.render("calisma", {
     loginn: req.session.loggedinUser,
     email: req.session.emailAddress,
     adminn: req.session.adminUser,

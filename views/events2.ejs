@@ -8,8 +8,8 @@
   <link rel="stylesheet" href="/css/style.css" />
   <link rel="stylesheet" href="/css/events2.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" />
-  <title>Anasayfa</title>
-  <script src="/wievs/mainpage.js"></script>
+  <title>Etkinlik Detayları</title>
+  <script src="mainpage.js"></script>
 </head>
 
 <body>
@@ -18,9 +18,9 @@
     <div class="header container">
       <div class="navbar">
         <div class="logo">
-          <a href="/"><img src="images/iu_logo-beyaz.png" class="logoimg" /></a>
+          <a href="/"><img src="/images/iu_logo-beyaz.png" class="logoimg" /></a>
 
-          <a href="/"><img src="images/logo.png" class="logoimg2" /></a>
+          <a href="/"><img src="/images/logo.png" class="logoimg2" /></a>
         </div>
         <div class="navlist">
           <div class="hb">
@@ -30,8 +30,8 @@
             <li><a href="/">Anasayfa</a></li>
             <li><a href="/events">Etkinlikler</a></li>
             <li><a href="/aboutus">Hakkımızda</a></li>
-            <li><a href="/members">Yönetim Ekibi</a></li>
-            <li><a href="/members2">Çalışma Ekibi</a></li>
+            <li><a href="/yonetim">Yönetim Ekibi</a></li>
+            <li><a href="/calisma">Çalışma Ekibi</a></li>
             <% if(loginn){ %>
               <li class="Welcome"> Hoşgeldiniz <br>
                 <%=name%>
@@ -128,7 +128,8 @@
     </div>
   </section>
   <!-- *Footer End -->
-  <script src="/views/hb.js"></script>
+  <script src="/hb.js"></script>
+  <script src="/darkmode.js"></script>
 </body>
 
 </html>

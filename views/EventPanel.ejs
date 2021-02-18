@@ -52,25 +52,25 @@
         <div class="title">
             <h3 class="tt">Etkinlikler</h3>
         </div>
-        <form action="/adminpanel/event" enctype="multipart/form-data" method="POST">
+        <form action="/adminPanel/event" method="POST">
             <div class="event-text">
-                <div class="event-top" style="justify-content: space-between">
+                <div class="event-top shadow" style="justify-content: space-between">
                     <label class="text" for="EventName">Etkinlik Adı</label>
-                    <textarea class="shadow" id="EventName" name="EventName" rows="10" cols="50" required></textarea>
+                    <textarea id="EventName" name="EventName" rows="10" cols="50" required></textarea>
                 </div>
-                <div class="event-top" style="justify-content: space-between">
+                <div class="event-top shadow" style="justify-content: space-between">
                     <label class="text" for="EventPhoto">Etkinlik Resmi</label>
-                    <input type="file" id="image" name="image" required>
+                    <textarea name="EventPhoto" id="EventPhoto" cols="50" rows="10"></textarea>
+                    <!-- <input type="file" name="EventPhoto" id="EventPhoto"> -->
                 </div>
-                <div class="event-top" style="justify-content: space-between">
+                <div class="event-top shadow" style="justify-content: space-between">
                     <label class="text" for="EventFull">Etkinlik Açıklaması</label>
-                    <textarea class="shadow" id="EventFull" name="EventFull" rows="10" cols="50" required></textarea>
+                    <textarea id="EventFull" name="EventFull" rows="10" cols="50" required></textarea>
                 </div>
-                <div class="event-top" style="justify-content: space-between">
+                <div class="event-top shadow" style="justify-content: space-between">
                     <label class="text" for="EventSummary">Etkinlik Özeti</label>
-                    <textarea class="shadow" id="EventSummary" name="EventSummary" rows="10" cols="50" required></textarea>
+                    <textarea id="EventSummary" name="EventSummary" rows="10" cols="50" required></textarea>
                 </div>
-                
             </div>
             <div class="buttonpart">
                 <a><button class="button" type="submit">Etkinlik Ekle</button></a>
@@ -108,7 +108,7 @@
                 <button style="
             padding: 5px;
             border-radius: 1.175rem;
-            background-color: #17995c;
+            background-color: #4caf50;
             font-size: 16px;
             color: white;
             cursor: pointer;

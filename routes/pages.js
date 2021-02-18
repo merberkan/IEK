@@ -5,26 +5,14 @@ const mysql = require("mysql");
 const nodemailer = require("nodemailer");
 const Cryptr = require("cryptr");
 const cryptr = new Cryptr("myTotalySecretKey");
-const multer = require("multer");
-
-const multerConf = {
-  storage : multer.diskStorage({
-  destination: function(req,file,next){
-  next(null, './public/images');
-  },
-  filename: function (req, file, next){
-    const ext = file.mimetype.split("/")[1];
-  next(null ,file.fieldname+"-"+Date.now()+"."+ ext)
-  
-  }
-}),
-};
 
 const db = mysql.createConnection({
-  host: process.env.DATABASE_HOST,
-  user: process.env.DATABASE_USER,
-  password: process.env.DATABASE_PASSWORD,
-  database: process.env.DATABASE,
+  host: "localhost",
+  user: "root",
+  password: "root",
+  database: "Iek",
+  socketPath: "/Applications/MAMP/tmp/mysql/mysql.sock",
+  port: "8889" 
 });
 
 router.get("/", (req, res) => {
@@ -50,24 +38,6 @@ router.get("/login", (req, res) => {
     email: req.session.emailAddress,
     message: req.session.message,
   });
-});
-router.get("/fileupload", (req, res) => {
-  const uploadStatus = req.app.locals.uploadStatus;
-  res.render("file_upload", {
-    loginn: req.session.loggedinUser,
-    email: req.session.emailAddress,
-    message: req.session.message,
-    title: "anananan",
-    uploadStatus: uploadStatus,
-  });
-});
-router.post("/save-image", multer(multerConf).single("image"), function(req,res){
-  const file = req.file
-  if(!file){
-    return res.end("please choose file to upload!")
-  }
-  req.app.locals.uploadStatus = true;
-  res.redirect("/fileupload");
 });
 
 router.get("/forgetPassword", (req, res) => {
@@ -104,29 +74,34 @@ router.get("/Useragreement", (req, res) => {
 });
 
 router.get("/UserPanel", (req, res) => {
-  db.query("SELECT * FROM iek.Users", async (err, result) => {
-    const Users = [];
-    if (result.length > 0) {
-      for (var i = 0; i < result.length; i++) {
-        var a = {
-          role: result[i].role,
-          firstname: result[i].firstname,
-          lastname: result[i].lastname,
-          email: result[i].email,
-          id: result[i].id,
-        };
-        Users.push(a);
+  if(req.session.adminUser && req.session.loggedinUser){
+    db.query("SELECT * FROM iek.Users", async (err, result) => {
+      const Users = [];
+      if (result.length > 0) {
+        for (var i = 0; i < result.length; i++) {
+          var a = {
+            role: result[i].role,
+            firstname: result[i].firstname,
+            lastname: result[i].lastname,
+            email: result[i].email,
+            id: result[i].id,
+          };
+          Users.push(a);
+        }
       }
-    }
-    res.render("UserPanel", {
-      Users,
-      email: req.session.emailAddress,
-      loginn: req.session.loggedinUser,
-      adminn: req.session.adminUser,
-      name: req.session.loginname,
-      lastname: req.session.loginlastname,
+      res.render("UserPanel", {
+        Users,
+        email: req.session.emailAddress,
+        loginn: req.session.loggedinUser,
+        adminn: req.session.adminUser,
+        name: req.session.loginname,
+        lastname: req.session.loginlastname,
+      });
     });
-  });
+  }else {
+    res.redirect("/notFound");
+  }
+  
 });
 
 router.get("/userdelete/:mail", (req, res) => {
@@ -180,10 +155,6 @@ router.get("/events", (req, res) => {
     const EventsArray = [];
     if (err) {
       res.render("notFound", {
-        EventsArray,
-        messages,
-        capacityControl,
-        dateControl,
         email: req.session.emailAddress,
         loginn: req.session.loggedinUser,
         adminn: req.session.adminUser,
@@ -388,22 +359,65 @@ router.get("/sendSuccess", (req, res) => {
   });
 });
 router.get("/adminMain", (req, res) => {
-  res.render("adminMain", {
-    email: req.session.emailAddress,
-    loginn: req.session.loggedinUser,
-    adminn: req.session.adminUser,
-    name: req.session.loginname,
-    lastname: req.session.loginlastname,
-  });
+  if(req.session.adminUser && req.session.loggedinUser){
+    res.render("adminMain", {
+      email: req.session.emailAddress,
+      loginn: req.session.loggedinUser,
+      adminn: req.session.adminUser,
+      name: req.session.loginname,
+      lastname: req.session.loginlastname,
+    });
+  }else{
+    res.redirect("/notFound");
+  }
 });
 router.get("/EventPanel", (req, res) => {
-  res.render("EventPanel", {
-    email: req.session.emailAddress,
-    loginn: req.session.loggedinUser,
-    adminn: req.session.adminUser,
-    name: req.session.loginname,
-    lastname: req.session.loginlastname,
-  });
+  if(req.session.adminUser && req.session.loggedinUser){
+    db.query("SELECT * FROM Events", (err, results) => {
+      const Events = [];
+      if(err){
+        res.redirect("/notFound")
+      }
+      if(results.length > 0){
+        let event;
+        for (let index = 0; index < results.length; index++) {
+          event = {
+            EventID : results[index].EventID,
+            EventName : results[index].EventName,
+            EventPhoto : results[index].EventPhoto,
+            EventFull : results[index].EventFull,
+            EventSummary : results[index].EventSummary
+          };
+          
+          Events.push(event);
+        };
+      };
+      res.render("EventPanel", {
+        Events,
+        email: req.session.emailAddress,
+        loginn: req.session.loggedinUser,
+        adminn: req.session.adminUser,
+        name: req.session.loginname,
+        lastname: req.session.loginlastname,
+      });
+    });
+  }else{
+    res.redirect("/notFound");
+  }
+  
+});
+router.get("/eventdeleteasadmin/:id", (req, res) =>{
+  const path = req.params.id;
+  db.query(
+    "DELETE FROM Events Where EventID = ?",
+    [path],
+    (err, result) => {
+      if (err) {
+        console.log(err);
+      }
+      res.redirect("/EventPanel");
+    }
+  );
 });
 
 module.exports = router;

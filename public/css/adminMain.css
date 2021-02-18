@@ -28,12 +28,12 @@
     padding-bottom: 30px;
 
 }
-.button:hover {background-color: #17995c}
+.button:hover {background-color: #3e8e41}
 
 .button{
     padding: 5px;
     border-radius: 1rem;
-    background-color: #17995c;
+    background-color: #4caf50;
     font-size: 16px;
     color: white;
     cursor: pointer;
